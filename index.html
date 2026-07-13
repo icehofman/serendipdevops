@@ -1,259 +1,1444 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-
+<html lang="pt-BR">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Landing Page Serendip DevOps">
-    <meta name="author" content="Serendip DevOps">
-    <meta name="keywords" content="devops, serendip, sites, web, desenvolvimento, html, design">
-    <meta name="google-site-verification" content="JZYqKcfLybvZrGK8BINWrsoyu9IBiEc7ebqG_gg8IGA" />
-    
-    <title>Serendip - DevOps</title>
-    <!-- Bootstrap Core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Custom Fonts -->
-    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800"
-        rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic"
-        rel="stylesheet" type="text/css">    
-    <!-- Plugin CSS -->
-    <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
-    <!-- Theme CSS -->
-    <link href="css/creative.css" rel="stylesheet">
-    <link href="css/anicollection.css"  rel="stylesheet"  type="text/css">
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-</head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CORREÇÃO 6: Meta description atualizada conforme exigência -->
+    <meta name="description" content="Avaliação técnica preliminar de infraestrutura para empresas do Vale do Sinos. Descubra riscos ocultos e oportunidades de economia com um especialista de 25 anos.">
+    <!-- CORREÇÃO 2: Title tag corrigido para o texto exato -->
+    <title>Avaliação Técnica Preliminar para Empresas no Vale do Sinos | Continuidade Operacional | Serendip DevOps</title>
 
-<body id="page-top">
-    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
-        <div class="container-fluid">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
-                </button>
-                <a class="navbar-brand page-scroll" data-anijs="if: mouseover, do: pulse animated" href="#page-top">Serendip DevOps</a>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=JetBrains+Mono:wght@400&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Bootstrap 5 CSS (apenas para grid e accordion) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+
+    <style>
+        :root {
+            --bg-primary: #FAFAF8;
+            --bg-secondary: #F0EDE8;
+            --text-primary: #1A1A1A;
+            --text-secondary: #4A4A4A;
+            --accent-copper: #C97E4B;
+            --accent-petroleum: #2B6777;
+            --border-light: rgba(26, 26, 26, 0.08);
+            --border-medium: rgba(26, 26, 26, 0.1);
+            --footer-bg: #1A1A1A;
+            --footer-text: #E8E6E3;
+            --white: #FFFFFF;
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+            color: var(--text-primary);
+            background-color: var(--bg-primary);
+            line-height: 1.7;
+            margin: 0;
+            padding: 0;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* ========== TIPOGRAFIA ========== */
+        h1,
+        h2,
+        h3,
+        .font-display {
+            font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
+            font-weight: 700;
+            color: var(--text-primary);
+            letter-spacing: -0.02em;
+        }
+
+        h1 {
+            font-size: clamp(2rem, 4vw, 3.75rem);
+            line-height: 1.15;
+            margin-bottom: 1.25rem;
+        }
+
+        h2 {
+            font-size: clamp(1.75rem, 3vw, 2.5rem);
+            line-height: 1.25;
+            margin-bottom: 1rem;
+            letter-spacing: -0.01em;
+        }
+
+        h3 {
+            font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
+            font-weight: 600;
+            font-size: 1.35rem;
+            color: var(--text-primary);
+        }
+
+        .font-mono {
+            font-family: 'JetBrains Mono', 'Courier New', monospace;
+            font-weight: 400;
+        }
+
+        .text-secondary {
+            color: var(--text-secondary);
+        }
+
+        .text-copper {
+            color: var(--accent-copper);
+        }
+
+        .text-petroleum {
+            color: var(--accent-petroleum);
+        }
+
+        /* ========== CORREÇÃO 4: Links de texto devem usar azul petróleo #2B6777 ========== */
+        a:not(.btn-outline-copper):not(.hero-cta):not(.footer-contact-link):not(.social-proof-card):not([role="button"]):not(.footer-social-link) {
+            color: #2B6777;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        a:not(.btn-outline-copper):not(.hero-cta):not(.footer-contact-link):not(.social-proof-card):not([role="button"]):not(.footer-social-link):hover {
+            color: #1a5a6a;
+        }
+        .hero-cta {
+            color: #2B6777 !important;
+            border-bottom-color: #2B6777 !important;
+        }
+        .hero-cta:hover {
+            color: #1a5a6a !important;
+            border-bottom-color: #1a5a6a !important;
+        }
+
+        /* ========== LINHAS E BORDAS ========== */
+        .section-divider {
+            border: none;
+            height: 1px;
+            background: var(--border-light);
+            margin: 0;
+        }
+
+        /* ========== HEADER FIXO ========== */
+        .site-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: var(--white);
+            padding: 1rem 0;
+            transition: box-shadow 0.3s ease;
+            border-bottom: 1px solid transparent;
+        }
+
+        .site-header.scrolled {
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.06);
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .logo-area {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
+            font-weight: 700;
+            font-size: 1.35rem;
+            color: var(--text-primary);
+            text-decoration: none;
+            line-height: 1.2;
+            letter-spacing: -0.01em;
+        }
+
+        .logo:hover {
+            color: var(--text-primary);
+        }
+
+        .logo-slogan {
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            line-height: 1.3;
+        }
+
+        .btn-outline-copper {
+            display: inline-block;
+            padding: 0.6rem 1.4rem;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--accent-copper);
+            background: transparent;
+            border: 1px solid var(--accent-copper);
+            border-radius: 0;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            letter-spacing: 0.01em;
+        }
+
+        .btn-outline-copper:hover,
+        .btn-outline-copper:focus-visible {
+            background: var(--accent-copper);
+            color: var(--white);
+            border-color: var(--accent-copper);
+            outline: none;
+        }
+
+        /* ========== CORREÇÃO 3: Sobrescrever box-shadow azul do Bootstrap em inputs, selects e textareas ========== */
+        input:focus,
+        select:focus,
+        textarea:focus {
+            box-shadow: 0 0 0 0.2rem rgba(201, 126, 75, 0.25) !important;
+            border-color: #C97E4B !important;
+            outline: none !important;
+        }
+        /* Garantir que o input do lead magnet também obedeça */
+        .input-email:focus {
+            box-shadow: 0 0 0 0.2rem rgba(201, 126, 75, 0.25) !important;
+            border-color: #C97E4B !important;
+        }
+        /* Garantir que os inputs do formulário também obedeçam */
+        .form-input:focus {
+            box-shadow: 0 0 0 0.2rem rgba(201, 126, 75, 0.25) !important;
+            border-color: #C97E4B !important;
+        }
+        .form-select-custom:focus {
+            box-shadow: 0 0 0 0.2rem rgba(201, 126, 75, 0.25) !important;
+            border-color: #C97E4B !important;
+        }
+
+        /* ========== FADE-IN ANIMATION ========== */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(16px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ========== SEÇÕES ========== */
+        .section {
+            padding: 5rem 0;
+        }
+
+        .section-alt {
+            background-color: var(--bg-secondary);
+        }
+
+        .section-white {
+            background-color: var(--white);
+        }
+
+        /* ========== HERO ========== */
+        .hero-section {
+            padding-top: 8rem;
+            padding-bottom: 4rem;
+            background-color: var(--bg-primary);
+        }
+
+        .hero-photo {
+            width: 100%;
+            max-width: 420px;
+            aspect-ratio: 3/4;
+            object-fit: cover;
+            filter: grayscale(100%);
+            display: block;
+            margin: 0 auto;
+            border: 1px solid var(--border-light);
+        }
+
+        .hero-badge {
+            display: inline-block;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 0.85rem;
+            color: var(--accent-copper);
+            letter-spacing: 0.02em;
+            margin-bottom: 1rem;
+        }
+
+        .hero-cta {
+            display: inline-block;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 1.05rem;
+            text-decoration: none;
+            border-bottom: 2px solid;
+            padding-bottom: 2px;
+            transition: all 0.3s ease;
+            margin-top: 0.75rem;
+            letter-spacing: 0.01em;
+        }
+
+        /* ========== PROVA SOCIAL ========== */
+        .social-proof-card {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1.25rem 1rem;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: var(--text-primary);
+            border: 1px solid transparent;
+            transition: border-color 0.3s ease;
+            text-align: center;
+            min-height: 60px;
+            background: transparent;
+            text-decoration: none;
+        }
+
+        .social-proof-card:hover {
+            border-color: var(--accent-copper);
+        }
+
+        /* ========== CARDS DE ALERTA ========== */
+        .alert-card {
+            padding: 2rem 1.5rem;
+            border: 1px solid var(--border-light);
+            transition: border-color 0.3s ease;
+            background: var(--white);
+            height: 100%;
+        }
+
+        .alert-card:hover {
+            border-color: var(--accent-copper);
+        }
+
+        .alert-card .icon-circle {
+            font-size: 1.6rem;
+            color: var(--accent-copper);
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .alert-card h3 {
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 1.05rem;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .alert-card p {
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        /* ========== LISTA DE REVELAÇÃO ========== */
+        .reveal-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .reveal-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 0.85rem 0;
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+            font-size: 1rem;
+            color: var(--text-primary);
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .reveal-list li:last-child {
+            border-bottom: none;
+        }
+
+        .reveal-list .check-icon {
+            color: var(--accent-copper);
+            font-size: 1.1rem;
+            flex-shrink: 0;
+            margin-top: 0.15rem;
+        }
+
+        /* ========== PASSOS NUMERADOS ========== */
+        .step-number {
+            font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
+            font-weight: 700;
+            font-size: 3rem;
+            color: rgba(201, 126, 75, 0.3);
+            line-height: 1;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .step-title {
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: var(--text-primary);
+            margin-bottom: 0.4rem;
+        }
+
+        .step-desc {
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* ========== PARA QUEM / NÃO PARA QUEM ========== */
+        .fit-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .fit-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            padding: 0.6rem 0;
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+            font-size: 0.95rem;
+            color: var(--text-primary);
+        }
+
+        .fit-list .fit-icon {
+            flex-shrink: 0;
+            margin-top: 0.15rem;
+            font-size: 1rem;
+        }
+
+        .fit-icon.check {
+            color: var(--accent-copper);
+        }
+
+        .fit-icon.xmark {
+            color: var(--text-secondary);
+        }
+
+        /* ========== CASE CARD ========== */
+        .case-card {
+            border: 1px solid var(--border-light);
+            padding: 2rem;
+            background: var(--white);
+            position: relative;
+        }
+
+        .case-badge {
+            display: inline-block;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 0.7rem;
+            color: var(--accent-copper);
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .case-text {
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+            font-size: 1rem;
+            color: var(--text-primary);
+            line-height: 1.7;
+        }
+
+        .case-footnote {
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            margin-top: 1rem;
+            font-style: italic;
+        }
+
+        /* ========== LEAD MAGNET ========== */
+        .input-email {
+            width: 100%;
+            max-width: 400px;
+            padding: 0.7rem 1rem;
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+            font-size: 0.95rem;
+            color: var(--text-primary);
+            background: var(--white);
+            border: 1px solid var(--border-medium);
+            transition: border-color 0.3s ease;
+            outline: none;
+        }
+
+        /* ========== FAQ - ACCORDION CUSTOM ========== */
+        .accordion-button {
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 1rem;
+            color: var(--text-primary) !important;
+            background: transparent !important;
+            border: none !important;
+            box-shadow: none !important;
+            padding: 1.1rem 0;
+            border-bottom: 1px solid var(--border-light) !important;
+            border-radius: 0 !important;
+            transition: color 0.3s ease;
+        }
+
+        .accordion-button:not(.collapsed) {
+            color: var(--text-primary) !important;
+            background: transparent !important;
+            border-bottom: 1px solid var(--border-light) !important;
+        }
+
+        .accordion-button::after {
+            filter: brightness(0) saturate(100%) invert(55%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(95%) contrast(90%);
+            transition: transform 0.3s ease;
+        }
+
+        .accordion-button:not(.collapsed)::after {
+            filter: brightness(0) saturate(100%) invert(55%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(95%) contrast(90%);
+            transform: rotate(180deg);
+        }
+
+        .accordion-button:hover {
+            color: var(--accent-copper) !important;
+        }
+
+        .accordion-item {
+            border: none !important;
+            background: transparent !important;
+        }
+
+        .accordion-body {
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            padding: 1rem 0 1.5rem 0;
+            line-height: 1.7;
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        /* ========== FORMULÁRIO ========== */
+        .form-input {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+            font-size: 0.95rem;
+            color: var(--text-primary);
+            background: var(--white);
+            border: 1px solid var(--border-medium);
+            transition: border-color 0.3s ease;
+            outline: none;
+        }
+
+        .form-select-custom {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+            font-size: 0.95rem;
+            color: var(--text-primary);
+            background: var(--white);
+            border: 1px solid var(--border-medium);
+            transition: border-color 0.3s ease;
+            outline: none;
+            appearance: auto;
+        }
+
+        .captcha-feedback {
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 0.85rem;
+            margin-top: 0.35rem;
+            min-height: 1.3em;
+            transition: color 0.3s ease;
+        }
+
+        .btn-submit {
+            display: inline-block;
+            padding: 0.75rem 2rem;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: var(--accent-copper);
+            background: transparent;
+            border: 1px solid var(--accent-copper);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            letter-spacing: 0.01em;
+        }
+
+        .btn-submit:disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+            color: var(--text-secondary);
+            border-color: var(--border-medium);
+        }
+
+        .btn-submit:not(:disabled):hover,
+        .btn-submit:not(:disabled):focus-visible {
+            background: var(--accent-copper);
+            color: var(--white);
+            border-color: var(--accent-copper);
+            outline: none;
+        }
+
+        /* ========== RODAPÉ ========== */
+        .site-footer {
+            background: var(--footer-bg);
+            color: var(--footer-text);
+            padding: 3rem 0 2rem;
+        }
+
+        .site-footer .footer-logo {
+            font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: var(--footer-text);
+        }
+
+        .site-footer a {
+            color: var(--footer-text);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .site-footer a:hover {
+            color: var(--accent-copper);
+        }
+
+        .footer-badge {
+            display: inline-block;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 0.7rem;
+            color: rgba(255, 255, 255, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 0.35rem 0.75rem;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+
+        .footer-contact-link {
+            cursor: pointer;
+            color: var(--footer-text);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-contact-link:hover {
+            color: var(--accent-copper);
+        }
+
+        /* Classe para links de redes sociais no rodapé, mantendo cor do rodapé */
+        .footer-social-link {
+            color: var(--footer-text);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .footer-social-link:hover {
+            color: var(--accent-copper);
+        }
+
+        /* ========== RESPONSIVO ========== */
+        @media (max-width: 991px) {
+            .section {
+                padding: 3.5rem 0;
+            }
+            .hero-section {
+                padding-top: 7rem;
+                padding-bottom: 3rem;
+            }
+            h1 {
+                font-size: clamp(1.6rem, 5vw, 2.4rem);
+            }
+            h2 {
+                font-size: clamp(1.4rem, 4vw, 2rem);
+            }
+            .hero-photo {
+                max-width: 300px;
+                margin-bottom: 2rem;
+            }
+            .header-inner {
+                flex-direction: row;
+                align-items: center;
+            }
+            .btn-outline-copper {
+                font-size: 0.8rem;
+                padding: 0.5rem 1rem;
+            }
+            .logo {
+                font-size: 1.15rem;
+            }
+            .logo-slogan {
+                font-size: 0.7rem;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .section {
+                padding: 2.8rem 0;
+            }
+            .hero-section {
+                padding-top: 6.5rem;
+                padding-bottom: 2rem;
+            }
+            h1 {
+                font-size: 1.7rem;
+            }
+            h2 {
+                font-size: 1.5rem;
+            }
+            .hero-photo {
+                max-width: 240px;
+                margin-bottom: 1.5rem;
+            }
+            .step-number {
+                font-size: 2.4rem;
+            }
+            .social-proof-card {
+                font-size: 0.85rem;
+                padding: 0.9rem 0.5rem;
+                min-height: 48px;
+            }
+            .case-card {
+                padding: 1.25rem;
+            }
+            .header-inner {
+                gap: 0.5rem;
+            }
+            .btn-outline-copper {
+                font-size: 0.75rem;
+                padding: 0.45rem 0.85rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ==================== HEADER FIXO ==================== -->
+    <header class="site-header" id="siteHeader">
+        <div class="container header-inner">
+            <div class="logo-area">
+                <a href="#" class="logo">Serendip DevOps</a>
+                <span class="logo-slogan">O conhecimento das grandes empresas, no ritmo da sua.</span>
             </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a class="page-scroll" href="#page-top">Serendip</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#about">Sobre</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#services">Princípios</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#contact">Contato</a>
-                    </li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container-fluid -->
-    </nav>
-    <header>
-        <div class="header-content">
-            <div class="header-content-inner">
-                <h1 id="homeHeading">Serendip DevOps</h1>
-                <hr>
-                <p>“O acaso só favorece a mente preparada” - <em>Louis Pasteur</em></p>
-                <a href="#about" class="btn btn-primary btn-lg page-scroll" data-anijs="if: click, do: bounceOutDown animated">Saiba mais</a>
-            </div>
+            <a href="#cta-final" class="btn-outline-copper">Agende uma avaliação</a>
         </div>
     </header>
-    <section class="bg-primary" id="about">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <h2 class="section-heading"><strong> Nós temos tudo que seu projeto precisa </strong></h2>
-                    <hr class="light">
-                    <p class="text-faded">Somos uma consultoria especializada em cultura DevOps.<br>Temos um conjunto de estratégias de melhorias construídas em torno
-                        de uma simples ideia:</p>
-                    <br>
-                    <p class="text-faded">“Que todas as facetas da sua organização de tecnologia devem estar alinhadas em direção de um objetivo
-                        comum de forma rápida e confiável, nas criações de produtos e serviços baseados em software de alta
-                        qualidade e de alto desempenho.”  - <em>Serendip DevOps</em></p>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section id="services">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading"><strong> Nossos princípios </strong></h2>
-                    <hr class="primary">
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 col-md-7 text-center">
-                    <div class="service-box">
-                        <i class="fa fa-4x fa-location-arrow text-primary sr-icons" data-anijs="if: mouseover, do: bounceOutUp animated, after: removeAnim"></i>
-                        <h3>Guiar</h3>
-                        <p class="text-muted">Guiar através da visão DevOps, da estratégia e de um roteiro, transformando isso em realidade operacional.</p>
+
+    <main>
+
+        <!-- ==================== HERO SECTION ==================== -->
+        <section class="hero-section" id="hero">
+            <div class="container">
+                <div class="row align-items-center">
+                    <!-- Foto (em mobile, aparece acima) -->
+                    <div class="col-lg-5 order-lg-2 text-center mb-4 mb-lg-0">
+                        <img
+                        src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=600&h=750&fit=crop&crop=face"
+                        alt="Israel Hofman"
+                        class="hero-photo fade-in"
+                        loading="eager"
+                        width="420"
+                        height="560"
+                        >
                     </div>
-                </div>
-                <div class="col-lg-4 col-md-7 text-center">
-                    <div class="service-box">
-                        <i class="fa fa-4x fa-dot-circle-o text-primary sr-icons" data-anijs="if: mouseover, do: flash animated, after: removeAnim"></i>
-                        <h3>Definir</h3>
-                        <p class="text-muted">Ajudar a definir um caso de negócios voltado para DevOps, que equilibra custos, riscos e agilidade
-                            no seu contexto de negócios específico.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-7 text-center">
-                    <div class="service-box">
-                        <i class="fa fa-4x fa-graduation-cap text-primary sr-icons" data-anijs="if: mouseover, do: rotateOutUpRight animated, after: removeAnim"></i>
-                        <h3>Aconselhar</h3>
-                        <p class="text-muted">Aconselhar sobre o seu projeto de arquitetura, incluindo processos e ferramentas DevOps.</p>
+                    <!-- Texto -->
+                    <div class="col-lg-7 order-lg-1">
+                        <span class="hero-badge fade-in">Especialista em software — da ideia à escala, sem complicação.</span>
+                        <h1 class="fade-in">Sua infraestrutura está preparada para crescer — ou está te segurando?</h1>
+                        <p class="text-secondary fade-in" style="font-size:1.1rem;line-height:1.7;">
+                            Sou Israel Hofman. Há mais de 25 anos, construo, arquiteto e opero sistemas de software.
+                            Passei por Dell, AGCO e Banrisul. Hoje, ajudo empresas a identificar o que está drenando
+                            tempo e dinheiro da operação — em uma avaliação técnica de 45 minutos.
+                        </p>
+                        <!-- CORREÇÃO 4: Link âncora agora usa azul petróleo via classe hero-cta -->
+                        <a href="#cta-final" class="hero-cta fade-in">Solicitar uma Avaliação Técnica Preliminar →</a>
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-lg-4 col-md-7 text-center">
-                </div>
-                <div class="col-lg-4 col-md-7 text-center">
-                    <div class="service-box">
-                        <i class="fa fa-4x fa-exchange text-primary sr-icons" data-anijs="if: mouseover, do: fadeOutLeft animated, after: removeAnim"></i>
-                        <h3>Feedback</h3>
-                        <p class="text-muted">Fornecer feedback e orientação através de DevOps, ajudando com escopo e prioridades, identificar
-                            lacunas e pontos de estrangulamento e aconselhá-lo sobre as medidas adequadas.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-7 text-center">
+        </section>
+
+        <hr class="section-divider">
+
+        <!-- ==================== BARRA DE PROVA SOCIAL ==================== -->
+        <section class="section section-alt" id="social-proof">
+            <div class="container">
+                <p class="text-center text-secondary fade-in" style="font-size:0.9rem;margin-bottom:1.75rem;">
+                    Empresas onde já atuei.
+                </p>
+                <div class="row g-2 justify-content-center">
+                    <div class="col-6 col-md-4 col-lg-2 fade-in"><div class="social-proof-card">Dell Technologies</div></div>
+                    <div class="col-6 col-md-4 col-lg-2 fade-in"><div class="social-proof-card">AGCO</div></div>
+                    <div class="col-6 col-md-4 col-lg-2 fade-in"><div class="social-proof-card">Banrisul</div></div>
+                    <div class="col-6 col-md-4 col-lg-2 fade-in"><div class="social-proof-card">Stefanini</div></div>
+                    <div class="col-6 col-md-4 col-lg-2 fade-in"><div class="social-proof-card">idwall</div></div>
+                    <div class="col-6 col-md-4 col-lg-2 fade-in"><div class="social-proof-card">Yassir</div></div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-lg-4 col-md-7 text-center">
-                    <div class="service-box">
-                        <i class="fa fa-4x fa-search text-primary sr-icons" data-anijs="if: mouseover, do: bounceOut animated, after: removeAnim"></i>
-                        <h3>Avaliar</h3>
-                        <p class="text-muted">Ajudar a avaliar seus níveis de maturidade no conjunto de ferramentas de automação e de entrega contínua.</p>
+        </section>
+
+        <hr class="section-divider">
+
+        <!-- ==================== SINAIS DE ALERTA ==================== -->
+        <section class="section section-white" id="sinais-alerta">
+            <div class="container">
+                <h2 class="fade-in">Sua operação apresenta algum desses sinais?</h2>
+                <div class="row g-4 mt-3">
+                    <div class="col-md-6 fade-in">
+                        <div class="alert-card">
+                            <i class="fa-regular fa-circle-xmark icon-circle"></i>
+                            <h3>Lentidão ou quedas inexplicadas em produção</h3>
+                            <p>Seus clientes notam antes de você. Cada minuto fora do ar custa receita e credibilidade.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 fade-in">
+                        <div class="alert-card">
+                            <i class="fa-regular fa-circle-xmark icon-circle"></i>
+                            <h3>Custos de infraestrutura que sobem todo mês</h3>
+                            <p>Sem clareza sobre o que está consumindo recursos, a conta de cloud vira uma caixa-preta.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 fade-in">
+                        <div class="alert-card">
+                            <i class="fa-regular fa-circle-xmark icon-circle"></i>
+                            <h3>Deploys que levam horas — e ninguém confia neles</h3>
+                            <p>Processos manuais, rollbacks frequentes e medo de subir código em sexta-feira.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 fade-in">
+                        <div class="alert-card">
+                            <i class="fa-regular fa-circle-xmark icon-circle"></i>
+                            <h3>Você não sabe o que acontece se o servidor principal cair</h3>
+                            <p>Falta de visibilidade, backups não testados e ausência de plano de recuperação.</p>
+                        </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-7 text-center">
-                    <div class="service-box">
-                        <i class="fa fa-4x fa-compress text-primary sr-icons" data-anijs="if: mouseover, do: rubberBand animated, after: removeAnim"></i>
-                        <h3>Identificar</h3>
-                        <p class="text-muted">Ajudar a identificar as métricas e indicadores de desempenho para melhorar o alinhamento e acelerar
-                            o fluxo de informações entre o desenvolvimento e a operação, e definir o foco na agilidade e
-                            qualidade.</p>
+            </div>
+        </section>
+
+        <hr class="section-divider">
+
+        <!-- ==================== O QUE UMA AVALIAÇÃO TÉCNICA REVELA ==================== -->
+        <section class="section section-alt" id="revela">
+            <div class="container">
+                <h2 class="fade-in">Em 45 minutos, posso mapear:</h2>
+                <ul class="reveal-list mt-3 fade-in">
+                    <li><i class="fa-solid fa-check check-icon"></i> Gargalos de performance que drenam a experiência do usuário</li>
+                    <li><i class="fa-solid fa-check check-icon"></i> Desperdícios em cloud e infraestrutura que você nem sabia que existiam</li>
+                    <li><i class="fa-solid fa-check check-icon"></i> Riscos de segurança que passam despercebidos na operação diária</li>
+                    <li><i class="fa-solid fa-check check-icon"></i> Oportunidades de automação que liberam horas da sua equipe</li>
+                    <li><i class="fa-solid fa-check check-icon"></i> Um roadmap técnico com prioridades claras e estimativa de impacto</li>
+                </ul>
+                <p class="text-secondary fade-in mt-4" style="font-size:0.95rem;">
+                    Você recebe um documento de 2 páginas com recomendações priorizadas e estimativa de economia potencial.
+                </p>
+            </div>
+        </section>
+
+        <hr class="section-divider">
+
+        <!-- ==================== COMO FUNCIONA ==================== -->
+        <section class="section section-white" id="como-funciona">
+            <div class="container">
+                <h2 class="fade-in">Da avaliação ao plano de ação</h2>
+                <div class="row g-4 mt-3">
+                    <div class="col-md-4 fade-in">
+                        <span class="step-number">1</span>
+                        <p class="step-title">Avaliação Técnica Preliminar</p>
+                        <p class="step-desc">
+                            Conversa técnica de 45 minutos sobre sua operação atual, dores e objetivos.
+                            <br><strong style="color:#1A1A1A;">Investimento: R$&nbsp;350</strong>, integralmente abatidos no primeiro mês de serviço, caso avancemos.
+                        </p>
                     </div>
-                </div>
-                <div class="col-lg-4 col-md-7 text-center">
-                    <div class="service-box">
-                        <i class="fa fa-4x fa-leaf text-primary sr-icons" data-anijs="if: mouseover, do: rotateOutDownLeft animated, after: removeAnim"></i>
-                        <h3>Cultivar</h3>
-                        <p class="text-muted">Ajudar a cultivar a mudança organizacional e cultural necessário para uma metodologia de desenvolvimento
-                            ágil.
+                    <div class="col-md-4 fade-in">
+                        <span class="step-number">2</span>
+                        <p class="step-title">Diagnóstico aprofundado</p>
+                        <p class="step-desc">
+                            Se decidirmos avançar, mergulho na sua arquitetura para mapear cada ponto crítico com profundidade.
+                        </p>
+                    </div>
+                    <div class="col-md-4 fade-in">
+                        <span class="step-number">3</span>
+                        <p class="step-title">Plano de ação e acompanhamento</p>
+                        <p class="step-desc">
+                            Implementação das melhorias com acompanhamento próximo — sem squad genérico, sem surpresas.
                         </p>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-    <section id="contact" class="bg-contact">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <h2 class="section-heading"><strong> Entre em contato conosco </strong></h2>
-                    <hr class="primary">
-                    <p>“Pode se constituir numa ferramenta poderosa na contribuição de percepções inovadoras que conduzem à
-                        realização de visões empreendedoras. Ao entender o processo de seu desenvolvimento e utilização,
-                        os gestores e pesquisadores podem usar o acaso como importante contribuição para o sucesso competitivo
-                        de um projeto.” - <em>Serendip DevOps</em></p>
-                </div>
-                <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <hr class="primary">
-                    <form class="form-horizontal" action="https://script.google.com/macros/s/AKfycbxjn7P9CT0pQAICm1Qh6VM6ZkrKnxvvCHoUGGykVlDz8gTyZQcB/exec"
-                        method="post" id="gform" data-toggle="validator" role="form">
-                        <fieldset>
-                            <!-- Name input-->
-                            <div class="form-group">
-                                <label class="col-md-3 control-label" for="name">Nome:</label>
-                                <div class="col-md-9">
-                                    <input id="name" name="name" type="text" placeholder="Nome completo" class="form-control" required>
-                                </div>
-                            </div>
-                            <!-- Email input-->
-                            <div class="form-group">
-                                <label class="col-md-3 control-label" for="email">E-mail:</label>
-                                <div class="col-md-9">
-                                    <input id="email" name="email" type="email" placeholder="E-mail válido" class="form-control" pattern="^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$"
-                                        required>
-                                </div>
-                            </div>
-                            <!-- Message body -->
-                            <div class="form-group">
-                                <label class="col-md-3 control-label" for="message">Mensagem:</label>
-                                <div class="col-md-9">
-                                    <textarea class="form-control" id="message" name="message" placeholder="Sua breve mensagem" rows="5" required></textarea>
-                                </div>
-                            </div>
-                            <!-- Math input-->
-                            <div class="form-group">
-                                <div>
-                                    <label class="col-md-3 control-label" id="problem" for="answer"></label>
-                                </div>
-                                <div class="col-md-9">
-                                    <input id="answer" name="answer" type="text" placeholder="Você é um robô? Não, qual o resultado?" class="form-control">
-                                </div>
-                            </div>
-                            <!-- Form actions -->
-                            <div class="form-group">
-                                <div class="col-md-12 text-right">
-                                    <button id="submit" type="submit" class="btn btn-primary btn-lg" data-anijs="if: click, do: lightSpeedOut animated, after: removeAnim" disabled>Enviar</button>
-                                </div>
-                            </div>
-                        </fieldset>
-                    </form>
-                    <div style="display:none;" id="thankyou_message">
-                        <p>Sua mensagem foi enviada com sucesso!<br>Obrigado.</p>
+        </section>
+
+        <hr class="section-divider">
+
+        <!-- ==================== PARA QUEM É (E PARA QUEM NÃO É) ==================== -->
+        <section class="section section-alt" id="para-quem">
+            <div class="container">
+                <h2 class="fade-in">Esta avaliação é para você se…</h2>
+                <div class="row g-4 mt-3">
+                    <div class="col-md-6 fade-in">
+                        <ul class="fit-list">
+                            <li><i class="fa-regular fa-circle-check fit-icon check"></i> Sua empresa tem sistemas em produção e você sente que algo não vai bem</li>
+                            <li><i class="fa-regular fa-circle-check fit-icon check"></i> Você quer reduzir custos de infraestrutura sem comprometer a estabilidade</li>
+                            <li><i class="fa-regular fa-circle-check fit-icon check"></i> Você precisa de escalabilidade mas não sabe por onde começar</li>
+                            <li><i class="fa-regular fa-circle-check fit-icon check"></i> Você valoriza um relacionamento direto com quem executa o serviço</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6 fade-in">
+                        <ul class="fit-list">
+                            <li><i class="fa-regular fa-circle-xmark fit-icon xmark"></i> Você busca uma solução milagrosa em 24 horas</li>
+                            <li><i class="fa-regular fa-circle-xmark fit-icon xmark"></i> Você prefere contratar um squad genérico que troca de pessoas a cada sprint</li>
+                            <li><i class="fa-regular fa-circle-xmark fit-icon xmark"></i> Você quer um orçamento fechado sem diagnóstico prévio</li>
+                            <li><i class="fa-regular fa-circle-xmark fit-icon xmark"></i> Você não está disposto a investir R$&nbsp;350 em uma avaliação especializada</li>
+                        </ul>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-    <!-- Footer -->
-    <footer>
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-6">
-                </div>
-                <div class="col-lg-6">
-                    <p class="copyright text-muted small text-right">Copyright &copy; Serendip DevOps 2018. All Rights Reserved</p>
+        </section>
+
+        <hr class="section-divider">
+
+        <!-- ==================== QUEM CONDUZ A AVALIAÇÃO ==================== -->
+        <section class="section section-white" id="quem-conduz">
+            <div class="container">
+                <h2 class="fade-in">Quem conduz a avaliação</h2>
+                <div class="row align-items-start g-4 mt-3">
+                    <div class="col-md-5 fade-in text-center">
+                        <img
+                        src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=500&h=625&fit=crop&crop=face"
+                        alt="Israel Hofman"
+                        class="hero-photo"
+                        loading="lazy"
+                        width="400"
+                        height="500"
+                        style="max-width:100%;"
+                        >
+                    </div>
+                    <div class="col-md-7 fade-in">
+                        <p style="font-family:'Inter',sans-serif;font-weight:400;font-size:1rem;color:#1A1A1A;line-height:1.75;">
+                            Meu nome é Israel Hofman. Há mais de 25 anos, construo, arquiteto e opero sistemas de software.
+                            Comecei como desenvolvedor, evolui para arquiteto de software e, nos últimos anos, mergulhei
+                            em infraestrutura de missão crítica e cultura DevOps. Atuei em Dell, AGCO, Banrisul, Stefanini,
+                            idwall e Yassir. Essa trajetória me deu uma visão rara: entendo a dor de quem desenvolve,
+                            a responsabilidade de quem arquiteta e a urgência de quem mantém sistemas no ar. Hoje, aplico
+                            esse conhecimento para que pequenas e médias empresas tenham a mesma solidez operacional das
+                            grandes — sem precisar de um exército de especialistas internos. Não tenho gerente de conta.
+                            Quem te atende na primeira conversa é quem vai colocar a mão no seu código. Atendo
+                            presencialmente no Vale do Sinos e remotamente para todo o Brasil.
+                        </p>
+                        <div class="mt-3 d-flex flex-wrap gap-2">
+                            <span style="font-family:'Inter',sans-serif;font-weight:600;font-size:0.75rem;color:#C97E4B;border:1px solid #C97E4B;padding:0.35rem 0.75rem;">Campo Bom, RS</span>
+                            <span style="font-family:'Inter',sans-serif;font-weight:600;font-size:0.75rem;color:#C97E4B;border:1px solid #C97E4B;padding:0.35rem 0.75rem;">Remoto para todo Brasil</span>
+                        </div>
+                    </div>
                 </div>
             </div>
+        </section>
+
+        <hr class="section-divider">
+
+        <!-- ==================== CASO LOCAL ILUSTRATIVO ==================== -->
+        <section class="section section-alt" id="caso">
+            <div class="container">
+                <h2 class="fade-in">O que isso significa para empresas como a sua</h2>
+                <div class="case-card mt-3 fade-in">
+                    <span class="case-badge">Case ilustrativo — baseado em situações reais do setor</span>
+                    <p class="case-text">
+                        Indústria de calçados em Novo Hamburgo — após fusão de sistemas, a conta de cloud triplicou.
+                        Em 10 dias, identificamos R$&nbsp;4.300/mês de desperdício e reestruturamos a arquitetura para
+                        escalar sem sustos.
+                    </p>
+                    <p class="case-footnote">Os números são reais; o nome é preservado por confidencialidade.</p>
+                </div>
+            </div>
+        </section>
+
+        <hr class="section-divider">
+
+        <!-- ==================== LEAD MAGNET ==================== -->
+        <section class="section section-white" id="lead-magnet">
+            <div class="container text-center">
+                <h2 class="fade-in">Antes da avaliação, entenda os sinais</h2>
+                <p class="text-secondary fade-in" style="font-size:1rem;max-width:560px;margin:0 auto 1.5rem;">
+                    Baixe o guia rápido: "5 sinais de que sua infraestrutura está te custando dinheiro — e você não sabe".
+                </p>
+                <div class="fade-in d-flex flex-wrap justify-content-center gap-2">
+                    <input type="email" class="input-email" placeholder="Seu melhor e-mail" aria-label="E-mail para receber o guia">
+                    <button type="button" class="btn-outline-copper" style="font-size:0.9rem;">Baixar guia (PDF)</button>
+                </div>
+            </div>
+        </section>
+
+        <hr class="section-divider">
+
+        <!-- ==================== URGÊNCIA ==================== -->
+        <section class="section section-alt" id="urgencia">
+            <div class="container text-center">
+                <p class="fade-in" style="font-family:'Inter',sans-serif;font-weight:400;font-size:1rem;color:#1A1A1A;max-width:650px;margin:0 auto;line-height:1.7;">
+                    Minha capacidade é limitada: atendo no máximo 6 empresas simultaneamente.
+                    Atualmente, tenho algumas vagas disponíveis para novas avaliações este mês.
+                </p>
+            </div>
+        </section>
+
+        <hr class="section-divider">
+
+        <!-- ==================== FAQ (ACORDEÃO) ==================== -->
+        <section class="section section-white" id="faq">
+            <div class="container">
+                <h2 class="fade-in">Perguntas que escuto com frequência</h2>
+                <div class="accordion mt-3 fade-in" id="faqAccordion">
+                    <!-- Q1 -->
+                    <div class="accordion-item">
+                        <h3 class="accordion-header" id="faqHeading1">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse1" aria-expanded="false" aria-controls="faqCollapse1">
+                                Como funciona a avaliação técnica preliminar?
+                            </button>
+                        </h3>
+                        <div id="faqCollapse1" class="accordion-collapse collapse" aria-labelledby="faqHeading1" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                É uma conversa técnica de 45 minutos — por videoconferência ou presencialmente no Vale do Sinos. Você me conta sobre sua operação, suas dores e seus objetivos. Eu faço perguntas cirúrgicas para entender a maturidade da sua infraestrutura. Ao final, entrego um documento de 2 páginas com recomendações priorizadas.
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Q2 -->
+                    <div class="accordion-item">
+                        <h3 class="accordion-header" id="faqHeading2">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse2" aria-expanded="false" aria-controls="faqCollapse2">
+                                Preciso preparar alguma coisa antes?
+                            </button>
+                        </h3>
+                        <div id="faqCollapse2" class="accordion-collapse collapse" aria-labelledby="faqHeading2" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Nada formal. Se tiver acesso ao dashboard de cloud ou a um resumo dos custos de infraestrutura, ajuda. Mas podemos conversar mesmo sem isso — as perguntas certas revelam mais do que relatórios prontos.
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Q3 -->
+                    <div class="accordion-item">
+                        <h3 class="accordion-header" id="faqHeading3">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse3" aria-expanded="false" aria-controls="faqCollapse3">
+                                Você vai acessar minha infraestrutura durante a avaliação?
+                            </button>
+                        </h3>
+                        <div id="faqCollapse3" class="accordion-collapse collapse" aria-labelledby="faqHeading3" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Não durante a avaliação preliminar. O diagnóstico inicial é baseado na conversa e em informações que você compartilhar voluntariamente. O acesso técnico só acontece se avançarmos para o diagnóstico aprofundado — e sempre com autorização explícita.
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Q4 -->
+                    <div class="accordion-item">
+                        <h3 class="accordion-header" id="faqHeading4">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse4" aria-expanded="false" aria-controls="faqCollapse4">
+                                O valor de R$&nbsp;350 é reembolsável?
+                            </button>
+                        </h3>
+                        <div id="faqCollapse4" class="accordion-collapse collapse" aria-labelledby="faqHeading4" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                O valor cobre o tempo dedicado à avaliação e ao documento de recomendações. Se avançarmos para um serviço continuado, os R$&nbsp;350 são integralmente abatidos no primeiro mês. Se não avançarmos, você fica com o diagnóstico em mãos — o que já tem valor por si só.
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Q5 -->
+                    <div class="accordion-item">
+                        <h3 class="accordion-header" id="faqHeading5">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse5" aria-expanded="false" aria-controls="faqCollapse5">
+                                E se eu não tiver nenhum problema grave?
+                            </button>
+                        </h3>
+                        <div id="faqCollapse5" class="accordion-collapse collapse" aria-labelledby="faqHeading5" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Ótimo. Nesse caso, o documento confirmará que sua operação está saudável e apontará oportunidades de melhoria que talvez você não tenha considerado. Saber que está tudo bem também é um resultado valioso.
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Q6 -->
+                    <div class="accordion-item">
+                        <h3 class="accordion-header" id="faqHeading6">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse6" aria-expanded="false" aria-controls="faqCollapse6">
+                                Depois da avaliação, sou obrigado a contratar algo?
+                            </button>
+                        </h3>
+                        <div id="faqCollapse6" class="accordion-collapse collapse" aria-labelledby="faqHeading6" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Não. A avaliação é um serviço independente. Você paga pelo diagnóstico e pelo documento. Se fizer sentido para ambos, podemos conversar sobre continuidade — mas não há compromisso algum além da avaliação.
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Q7 -->
+                    <div class="accordion-item">
+                        <h3 class="accordion-header" id="faqHeading7">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse7" aria-expanded="false" aria-controls="faqCollapse7">
+                                Vocês terceirizam o serviço para juniores?
+                            </button>
+                        </h3>
+                        <div id="faqCollapse7" class="accordion-collapse collapse" aria-labelledby="faqHeading7" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Não. Eu, Israel Hofman, conduzo pessoalmente cada avaliação e cada projeto. Não há equipe oculta, não há repasse para profissionais juniores. Quem te atende na primeira conversa é quem vai colocar a mão no seu código. Esse é o compromisso da Serendip DevOps.
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Q8 -->
+                    <div class="accordion-item">
+                        <h3 class="accordion-header" id="faqHeading8">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse8" aria-expanded="false" aria-controls="faqCollapse8">
+                                Você atende presencialmente na região de Novo Hamburgo?
+                            </button>
+                        </h3>
+                        <div id="faqCollapse8" class="accordion-collapse collapse" aria-labelledby="faqHeading8" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Sim. Atendo presencialmente em todo o Vale do Sinos — Novo Hamburgo, Campo Bom, São Leopoldo, Sapiranga e arredores. Para empresas fora da região, o atendimento é remoto com a mesma profundidade.
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Q9 -->
+                    <div class="accordion-item">
+                        <h3 class="accordion-header" id="faqHeading9">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse9" aria-expanded="false" aria-controls="faqCollapse9">
+                                Por que não há preços de planos no site?
+                            </button>
+                        </h3>
+                        <div id="faqCollapse9" class="accordion-collapse collapse" aria-labelledby="faqHeading9" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Porque cada operação é única. Não vendo pacotes fechados — o escopo e o investimento dependem do que a avaliação revelar. A única coisa que precifico de antemão é a Avaliação Técnica Preliminar: R$&nbsp;350. O resto é conversa entre profissionais.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <hr class="section-divider">
+
+        <!-- ==================== CTA FINAL COM FORMULÁRIO ==================== -->
+        <section class="section section-alt" id="cta-final">
+            <div class="container">
+                <h2 class="fade-in">Solicite sua Avaliação Técnica Preliminar</h2>
+                <p class="text-secondary fade-in" style="font-size:1rem;margin-bottom:0.5rem;">
+                    Preencha o formulário ou chame no WhatsApp. Eu entro em contato para agendarmos.
+                </p>
+                <p class="fade-in" style="font-family:'Inter',sans-serif;font-weight:600;font-size:1rem;color:#1A1A1A;margin-bottom:2rem;">
+                    Investimento: R$&nbsp;350 — abatidos integralmente no primeiro mês de serviço, caso avancemos.
+                </p>
+
+                <div class="row justify-content-center fade-in">
+                    <div class="col-lg-8">
+                        <form id="evaluationForm" novalidate>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label for="nome" class="form-label" style="font-family:'Inter',sans-serif;font-weight:600;font-size:0.85rem;color:#1A1A1A;">Nome</label>
+                                    <input type="text" class="form-input" id="nome" name="nome" required placeholder="Seu nome completo">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="empresa" class="form-label" style="font-family:'Inter',sans-serif;font-weight:600;font-size:0.85rem;color:#1A1A1A;">Empresa</label>
+                                    <input type="text" class="form-input" id="empresa" name="empresa" required placeholder="Nome da sua empresa">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="email" class="form-label" style="font-family:'Inter',sans-serif;font-weight:600;font-size:0.85rem;color:#1A1A1A;">E-mail</label>
+                                    <input type="email" class="form-input" id="email" name="email" required placeholder="seu@email.com">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="whatsapp" class="form-label" style="font-family:'Inter',sans-serif;font-weight:600;font-size:0.85rem;color:#1A1A1A;">WhatsApp</label>
+                                    <input type="tel" class="form-input" id="whatsapp" name="whatsapp" required placeholder="(XX) XXXXX-XXXX">
+                                </div>
+                                <div class="col-12">
+                                    <label for="preocupacao" class="form-label" style="font-family:'Inter',sans-serif;font-weight:600;font-size:0.85rem;color:#1A1A1A;">Principal preocupação</label>
+                                    <select class="form-select-custom" id="preocupacao" name="preocupacao" required>
+                                        <option value="" disabled selected>Selecione uma opção</option>
+                                        <option value="estabilidade">Estabilidade e disponibilidade</option>
+                                        <option value="custos de cloud">Custos de cloud e infraestrutura</option>
+                                        <option value="deploys">Velocidade e qualidade dos deploys</option>
+                                        <option value="seguranca">Segurança da informação</option>
+                                        <option value="outro">Outro / Não sei identificar</option>
+                                    </select>
+                                </div>
+                                <!-- CAPTCHA MATEMÁTICO -->
+                                <div class="col-12">
+                                    <label class="form-label" style="font-family:'Inter',sans-serif;font-weight:600;font-size:0.85rem;color:#1A1A1A;">
+                                        Verificação: resolva a operação abaixo
+                                    </label>
+                                    <div style="display:flex;align-items:center;gap:0.75rem;flex-wrap:wrap;">
+                                        <span id="problem" class="font-mono" style="font-size:1.2rem;color:#1A1A1A;background:#FFFFFF;padding:0.5rem 1rem;border:1px solid rgba(26,26,26,0.1);display:inline-block;min-width:80px;text-align:center;">?</span>
+                                        <span style="font-size:1.2rem;color:#1A1A1A;">=</span>
+                                        <input type="number" id="answer" class="form-input" style="max-width:100px;text-align:center;" placeholder="?" aria-label="Resposta do captcha">
+                                    </div>
+                                    <p id="captchaFeedback" class="captcha-feedback"></p>
+                                </div>
+                                <div class="col-12 mt-2">
+                                    <button type="submit" id="submit-btn" class="btn-submit" disabled>Solicitar avaliação</button>
+                                </div>
+                            </div>
+                        </form>
+                        <div class="mt-4 text-center fade-in">
+                            <!-- CORREÇÃO 1: data-phone atualizado para o número real -->
+                            <a href="#" id="whatsappLink" class="btn-outline-copper" data-phone="5551998850128" style="display:inline-block;">
+                                <i class="fa-brands fa-whatsapp"></i> Prefere WhatsApp? Chame aqui.
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ==================== RODAPÉ ==================== -->
+    <footer class="site-footer" id="footer">
+        <div class="container">
+            <div class="row g-4 align-items-start">
+                <div class="col-md-4">
+                    <p class="footer-logo">Serendip DevOps</p>
+                    <p style="font-size:0.85rem;color:rgba(232,230,227,0.7);margin-bottom:0.5rem;">
+                        O conhecimento das grandes empresas, no ritmo da sua.
+                    </p>
+                </div>
+                <div class="col-md-4">
+                    <p style="font-weight:600;font-size:0.85rem;margin-bottom:0.5rem;">Contato</p>
+                    <p style="font-size:0.85rem;margin-bottom:0.25rem;">
+                        <span class="footer-contact-link" id="footerEmail" data-email-user="contato" data-email-domain="serendipdevops.com.br" title="Clique para revelar o e-mail">
+                            <i class="fa-regular fa-envelope"></i> <span id="footerEmailText">Clique para ver o e-mail</span>
+                        </span>
+                    </p>
+                    <p style="font-size:0.85rem;margin-bottom:0;">
+                        <!-- CORREÇÃO 1: data-phone atualizado para o número real -->
+                        <span class="footer-contact-link" id="footerPhone" data-phone="5551998850128" title="Clique para revelar o telefone">
+                            <i class="fa-solid fa-phone"></i> <span id="footerPhoneText">Clique para ver o telefone</span>
+                        </span>
+                    </p>
+                </div>
+                <div class="col-md-4 text-md-end">
+                    <p style="margin-bottom:0.75rem;">
+                        <!-- CORREÇÃO 5: Links de LinkedIn e GitHub atualizados para perfis reais -->
+                        <a href="https://linkedin.com/in/icehofman" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="LinkedIn" style="margin-right:1rem;">
+                            <i class="fa-brands fa-linkedin fa-lg"></i> LinkedIn
+                        </a>
+                        <a href="https://github.com/icehofman" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="GitHub">
+                            <i class="fa-brands fa-github fa-lg"></i> GitHub
+                        </a>
+                    </p>
+                    <div class="d-flex flex-wrap gap-2 justify-content-md-end mt-2">
+                        <span class="footer-badge">LGPD Compliant</span>
+                        <span class="footer-badge">GreenOps</span>
+                    </div>
+                </div>
+            </div>
+            <hr style="border-color:rgba(255,255,255,0.12);margin:1.5rem 0;">
+            <p style="font-size:0.8rem;color:rgba(232,230,227,0.6);text-align:center;margin:0;">
+                &copy; 2026 Serendip DevOps. Todos os direitos reservados.
+            </p>
         </div>
     </footer>
-    <!-- jQuery -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <!-- Bootstrap Core JavaScript -->
-    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-    <!-- Plugin JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-    <script src="vendor/scrollreveal/scrollreveal.min.js"></script>
-    <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
-    <!-- Theme JavaScript -->
-    <script src="js/creative.js"></script>
-    <script src="js/anijs-min.js"></script>
-    <script data-cfasync="false" src="js/form-submission-handler.js"></script>
-    <script src="js/math-captcha.js"></script>
-    <script src="js/google.js"></script>
-</body>
 
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js">
+    </script>
+    <!-- jQuery (apenas para o captcha) -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js">
+    </script>
+
+    <script>
+        (function() {
+            // ==================== HEADER SHADOW NO SCROLL ====================
+            const header = document.getElementById('siteHeader');
+            let scrollTicking = false;
+
+            function updateHeaderShadow() {
+                if (window.scrollY > 10) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+                scrollTicking = false;
+            }
+
+            window.addEventListener('scroll', function() {
+                if (!scrollTicking) {
+                    requestAnimationFrame(updateHeaderShadow);
+                    scrollTicking = true;
+                }
+            }, { passive: true });
+
+            // ==================== FADE-IN NO SCROLL (Intersection Observer) ====================
+            const fadeElements = document.querySelectorAll('.fade-in');
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px 0px -40px 0px',
+                threshold: 0.1
+            };
+
+            const fadeObserver = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        fadeObserver.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            fadeElements.forEach(function(el) {
+                fadeObserver.observe(el);
+            });
+
+            // ==================== CAPTCHA MATEMÁTICO (jQuery) ====================
+            $(document).ready(function() {
+                var num1 = Math.floor(Math.random() * 9) + 1;
+                var num2 = Math.floor(Math.random() * 9) + 1;
+                var correctAnswer = num1 + num2;
+                $('#problem').text(num1 + ' + ' + num2 + ' = ?');
+
+                $('#answer').on('input', function() {
+                    var userAnswer = parseInt($(this).val(), 10);
+                    var $feedback = $('#captchaFeedback');
+                    var $submitBtn = $('#submit-btn');
+
+                    if (isNaN(userAnswer)) {
+                        $feedback.text('').css('color', '#4A4A4A');
+                        $submitBtn.prop('disabled', true);
+                        return;
+                    }
+
+                    if (userAnswer === correctAnswer) {
+                        $feedback.text('Resposta correta.').css('color', '#C97E4B');
+                        $submitBtn.prop('disabled', false);
+                    } else {
+                        $feedback.text('Resposta incorreta. Tente novamente.').css('color',
+                            '#4A4A4A');
+                        $submitBtn.prop('disabled', true);
+                    }
+                });
+
+                // Previne envio do formulário (página estática)
+                $('#evaluationForm').on('submit', function(e) {
+                    e.preventDefault();
+                    if ($('#submit-btn').prop('disabled')) {
+                        return;
+                    }
+                    // Feedback sutil de envio (simulado)
+                    var $submitBtn = $('#submit-btn');
+                    var originalText = $submitBtn.text();
+                    $submitBtn.text('Solicitação enviada — entrarei em contato em breve.')
+                        .css('color', '#C97E4B').prop('disabled', true);
+                    setTimeout(function() {
+                        $submitBtn.text(originalText).css('color', '#C97E4B').prop('disabled',
+                            false);
+                    }, 3000);
+                });
+            });
+
+            // ==================== OFUSCAÇÃO DE E-MAIL NO RODAPÉ ====================
+            (function() {
+                var emailUser = 'contato';
+                var emailDomain = 'serendipdevops.com.br';
+                var fullEmail = emailUser + '@' + emailDomain;
+                var emailRevealed = false;
+
+                var footerEmailEl = document.getElementById('footerEmail');
+                var footerEmailText = document.getElementById('footerEmailText');
+
+                footerEmailEl.addEventListener('click', function() {
+                    if (!emailRevealed) {
+                        footerEmailText.textContent = fullEmail;
+                        footerEmailEl.setAttribute('href', 'mailto:' + fullEmail);
+                        footerEmailEl.style.cursor = 'pointer';
+                        emailRevealed = true;
+                    }
+                });
+
+                footerEmailEl.addEventListener('keydown', function(e) {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        footerEmailEl.click();
+                    }
+                });
+                footerEmailEl.setAttribute('tabindex', '0');
+                footerEmailEl.setAttribute('role', 'button');
+                footerEmailEl.setAttribute('aria-label', 'Clique para revelar o e-mail de contato');
+            })();
+
+            // ==================== OFUSCAÇÃO DE TELEFONE NO RODAPÉ ====================
+            (function() {
+                // CORREÇÃO 1: número de telefone real e formatação correta
+                var phoneRaw = '5551998850128';
+                var phoneFormatted = '(51) 99885-0128';
+                var phoneRevealed = false;
+
+                var footerPhoneEl = document.getElementById('footerPhone');
+                var footerPhoneText = document.getElementById('footerPhoneText');
+
+                footerPhoneEl.addEventListener('click', function() {
+                    if (!phoneRevealed) {
+                        footerPhoneText.textContent = phoneFormatted;
+                        footerPhoneEl.setAttribute('href', 'tel:+' + phoneRaw);
+                        footerPhoneEl.style.cursor = 'pointer';
+                        phoneRevealed = true;
+                    }
+                });
+
+                footerPhoneEl.addEventListener('keydown', function(e) {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        footerPhoneEl.click();
+                    }
+                });
+                footerPhoneEl.setAttribute('tabindex', '0');
+                footerPhoneEl.setAttribute('role', 'button');
+                footerPhoneEl.setAttribute('aria-label', 'Clique para revelar o telefone de contato');
+            })();
+
+            // ==================== WHATSAPP LINK (OFUSCADO) ====================
+            (function() {
+                var whatsappLink = document.getElementById('whatsappLink');
+                // CORREÇÃO 1: data-phone já atualizado no HTML, capturado dinamicamente
+                var phoneNumber = whatsappLink.getAttribute('data-phone');
+
+                whatsappLink.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    var message = encodeURIComponent(
+                        'Olá, Israel. Tenho interesse na Avaliação Técnica Preliminar. ' +
+                        'Minha empresa é [segmento] e minha principal preocupação é ' +
+                        '[estabilidade | custos de cloud | deploys | segurança].'
+                    );
+                    var fullUrl = 'https://wa.me/' + phoneNumber + '?text=' + message;
+                    window.open(fullUrl, '_blank', 'noopener,noreferrer');
+                });
+            })();
+
+            // ==================== INICIALIZA HEADER SHADOW ====================
+            updateHeaderShadow();
+
+        })();
+    </script>
+</body>
 </html>
