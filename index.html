@@ -11,7 +11,15 @@
     <meta property="og:description" content="Enterprise-grade DevOps practices for SMEs in southern Brazil. Founded by Israel Hofman.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://icehofman.github.io/serendipdevops/">
-    <meta property="og:image" content="https://icehofman.github.io/serendipdevops/og-image.jpg">
+    <!-- 
+      ======================= FOTO DO FUNDADOR (OG:IMAGE) =======================
+      Substitua o caminho abaixo pelo endereço real da imagem de Israel Hofman.
+      Formato recomendado: .webp. Dimensões sugeridas: 800x1066px.
+      Alt text completo descritivo no código.
+      ======================================================================
+    -->
+    <meta property="og:image" content="https://icehofman.github.io/serendipdevops/assets/israel-hofman.webp">
+    <meta property="og:image:alt" content="Israel Hofman, fundador da Serendip DevOps">
     <meta property="og:locale" content="pt_BR">
     <meta property="og:locale:alternate" content="en_US">
     <meta property="og:locale:alternate" content="es_ES">
@@ -114,7 +122,29 @@
         .founder-text p { margin-bottom: 16px; opacity: 0.9; }
         .founder-link { display: inline-flex; align-items: center; gap: 6px; color: var(--color-copper); font-weight: 600; text-decoration: none; transition: color var(--transition-fast); }
         .founder-link:hover { color: var(--color-copper-light); }
-        .founder-avatar { width: 200px; height: 200px; border-radius: 50%; background: linear-gradient(135deg, rgba(201,126,75,0.4), rgba(43,103,119,0.4)); display: flex; align-items: center; justify-content: center; margin: 0 auto; }
+
+        /* 
+        * ======================= FOTO DO FUNDADOR =======================
+        * INSTRUÇÕES PARA SUBSTITUIR PELA FOTO REAL DE ISRAEL HOFMAN:
+        * 
+        * 1. Salve a imagem otimizada na pasta "assets/" com o nome:
+        *    "israel-hofman.webp" (preferencialmente .webp ou .avif).
+        * 2. Dimensões sugeridas: 800px de largura x 1066px de altura.
+        * 3. Tamanho máximo do arquivo: 150 KB após compressão.
+        * 4. Alt text recomendado (já aplicado no código abaixo):
+        *    "Retrato corporativo profissional de Israel Hofman, fundador da Serendip DevOps. Cabelo cacheado castanho, barba ruiva, óculos pretos, blazer cinza carvão sobre camisa polo azul petróleo, fundo off-white."
+        * 5. Mapeamento de cores para referência:
+        *    - Fundo da foto: #FAFAF8 (Off-white, combina com o fundo do site)
+        *    - Camisa polo: #2B6777 (Azul petróleo, cor da Serendip)
+        *    - Blazer: cinza carvão escuro (~#3D3D3D)
+        * 
+        * Para ativar a imagem, remova o placeholder <div> abaixo e descomente a tag <img>.
+        * Você pode ajustar o border-radius conforme preferir:
+        *   - Círculo perfeito: border-radius: 50% (atual)
+        *   - Bordas levemente arredondadas: border-radius: 12px
+        * =================================================================
+        */
+        .founder-avatar { width: 200px; height: 200px; border-radius: 50%; background: linear-gradient(135deg, rgba(201,126,75,0.4), rgba(43,103,119,0.4)); display: flex; align-items: center; justify-content: center; margin: 0 auto; overflow: hidden; }
         .founder-avatar span { font-family: var(--font-heading); font-size: 3rem; color: rgba(255,255,255,0.6); }
 
         .contact-section { background: var(--color-bg-white); text-align: center; }
@@ -233,9 +263,22 @@
         <section class="section founder-section" id="fundador">
             <div class="section-inner">
                 <div class="founder-grid">
-                    <div class="founder-avatar">
+                    <!-- 
+                    * ======================= ATIVAÇÃO DA FOTO =======================
+                    * Remova a <div> placeholder abaixo e descomente a tag <img>.
+                    * Certifique-se de que o arquivo "assets/israel-hofman.webp" existe.
+                    *
+                    * <img src="./assets/israel-hofman.webp" 
+                    *      alt="Retrato corporativo profissional de Israel Hofman, fundador da Serendip DevOps. Cabelo cacheado castanho, barba ruiva, óculos pretos, blazer cinza carvão sobre camisa polo azul petróleo, fundo off-white."
+                    *      style="width:200px;height:200px;border-radius:50%;object-fit:cover;">
+                    *
+                    * Opção com bordas arredondadas (não circular): troque border-radius:50% por border-radius:12px.
+                    * =================================================================
+                    -->
+                    <img src="./assets/israel-hofman.webp" alt="Retrato corporativo profissional de Israel Hofman, fundador da Serendip DevOps. Cabelo cacheado castanho, barba ruiva, óculos pretos, blazer cinza carvão sobre camisa polo azul petróleo, fundo off-white." style="width:200px;height:200px;border-radius:50%;object-fit:cover;">
+                    <!--<div class="founder-avatar">
                         <span>IH</span>
-                    </div>
+                    </div>-->
                     <div class="founder-text">
                         <span class="section-label" style="color:var(--color-copper);" data-i18n="founder_label">Quem conduz</span>
                         <h2>Israel Hofman</h2>
@@ -434,11 +477,9 @@
                     const key = el.getAttribute('data-i18n-nav');
                     if (translations[lang][key]) el.textContent = translations[lang][key];
                 });
-                // email placeholder
                 if (emailSpan && !emailSpan.classList.contains('revealed')) {
                     emailSpan.textContent = translations[lang].email_placeholder;
                 }
-                // update lang selector UI
                 const meta = langMeta[lang];
                 if (currentFlag) currentFlag.textContent = meta.flag;
                 if (currentLangCode) currentLangCode.textContent = meta.code;
@@ -468,7 +509,6 @@
                 }
             });
 
-            // Mobile menu
             if (mobileToggle && navLinks) {
                 mobileToggle.addEventListener('click', () => {
                     navLinks.classList.toggle('mobile-open');
@@ -480,7 +520,6 @@
                 });
             }
 
-            // Obfuscated email
             if (emailSpan) {
                 emailSpan.addEventListener('click', function() {
                     if (this.classList.contains('revealed')) return;
