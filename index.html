@@ -8,7 +8,7 @@
     <meta name="robots" content="index, follow">
 
     <meta property="og:title" content="Serendip DevOps | Enterprise Cloud & DevOps">
-    <meta property="og:description" content="Enterprise-grade DevOps practices for SMEs in southern Brazil. Founded by Israel Hofman.">
+    <meta property="og:description" content="Enterprise-grade DevOps practices for small and medium-sized enterprises in southern Brazil. Founded by Israel Hofman.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://icehofman.github.io/serendipdevops/">
     <!-- 
@@ -54,6 +54,7 @@
             --color-text-body: #2C2C2C;
             --color-text-light: #E8E6E3;
             --color-text-muted: #6B6B6B;
+            --color-text-muted-light: #A0A0A0;
             --color-border-subtle: rgba(0, 0, 0, 0.08);
             --font-heading: 'Playfair Display', Georgia, serif;
             --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -150,7 +151,8 @@
         .contact-section { background: var(--color-bg-white); text-align: center; }
         .contact-email { font-size: 1.1rem; color: var(--color-teal); font-weight: 500; }
 
-        .site-footer { background: var(--color-deep-blue-light); color: var(--color-text-muted-light); text-align: center; padding: 32px 24px; font-size: 0.85rem; }
+        /* Footer com cores corrigidas para legibilidade */
+        .site-footer { background: var(--color-deep-blue-light); color: #E8E6E3; text-align: center; padding: 32px 24px; font-size: 0.85rem; }
         .site-footer a { color: var(--color-copper); text-decoration: none; font-weight: 500; }
         .site-footer a:hover { text-decoration: underline; }
 
@@ -281,7 +283,7 @@
                     <div class="founder-text">
                         <span class="section-label" style="color:var(--color-copper);" data-i18n="founder_label">Quem conduz</span>
                         <h2>Israel Hofman</h2>
-                        <p data-i18n="founder_bio">DevOps Architect com mais de 25 anos em TI. Liderou transformações para Dell, projetos de carteira digital (Uber-like) e antifraude com IA, além de indústrias como Gerdau, AGCO e Sicredi. Vive em Campo Bom e conhece a realidade das PMEs do Vale do Sinos. A Serendip DevOps é uma consultoria de alto nível, sem intermediários: o especialista sênior trabalha diretamente com seu time.</p>
+                        <p data-i18n="founder_bio">DevOps Architect com mais de 25 anos em TI. Liderou transformações para Dell, projetos de carteira digital (Uber-like) e antifraude com IA, além de indústrias como Gerdau, AGCO e Sicredi. Vive em Campo Bom e conhece a realidade das pequenas e médias empresas do Vale do Sinos. A Serendip DevOps é uma consultoria de alto nível, sem intermediários: o especialista sênior trabalha diretamente com seu time.</p>
                         <a href="https://icehofman.github.io/" class="founder-link">
                             <span data-i18n="founder_link">Ver currículo completo de Israel Hofman</span> <i class="fa-solid fa-arrow-right"></i>
                         </a>
@@ -335,7 +337,7 @@
                     clients_extra: 'Também atuamos em projetos de <strong>carteira digital (tipo Uber/99)</strong> e <strong>plataforma de antifraude com IA</strong>, trazendo know-how de escala global para o contexto local.',
                     clients_footer: '* Projetos conduzidos por Israel Hofman ao longo de 25 anos de carreira.',
                     founder_label: 'Quem conduz',
-                    founder_bio: 'DevOps Architect com mais de 25 anos em TI. Liderou transformações para Dell, projetos de carteira digital (Uber-like) e antifraude com IA, além de indústrias como Gerdau, AGCO e Sicredi. Vive em Campo Bom e conhece a realidade das PMEs do Vale do Sinos. A Serendip DevOps é uma consultoria de alto nível, sem intermediários: o especialista sênior trabalha diretamente com seu time.',
+                    founder_bio: 'DevOps Architect com mais de 25 anos em TI. Liderou transformações para Dell, projetos de carteira digital (Uber-like) e antifraude com IA, além de indústrias como Gerdau, AGCO e Sicredi. Vive em Campo Bom e conhece a realidade das pequenas e médias empresas do Vale do Sinos. A Serendip DevOps é uma consultoria de alto nível, sem intermediários: o especialista sênior trabalha diretamente com seu time.',
                     founder_link: 'Ver currículo completo de Israel Hofman',
                     contact_label: 'Contato',
                     contact_title: 'Vamos conversar sobre seu projeto?',
@@ -365,7 +367,7 @@
                     clients_extra: 'We also worked on <strong>digital wallet (Uber-like)</strong> and <strong>AI anti-fraud platform</strong> projects, bringing global-scale know-how to the local context.',
                     clients_footer: '* Projects led by Israel Hofman over a 25-year career.',
                     founder_label: 'Who leads',
-                    founder_bio: 'DevOps Architect with over 25 years in IT. Led transformations for Dell, digital wallet (Uber-like) and AI anti-fraud projects, plus industries like Gerdau, AGCO and Sicredi. Based in Campo Bom, he understands the reality of SMEs in Vale do Sinos. Serendip DevOps is a high-level consultancy, no middlemen: the senior specialist works directly with your team.',
+                    founder_bio: 'DevOps Architect with over 25 years in IT. Led transformations for Dell, digital wallet (Uber-like) and AI anti-fraud projects, plus industries like Gerdau, AGCO and Sicredi. Based in Campo Bom, he understands the reality of small and medium-sized enterprises in Vale do Sinos. Serendip DevOps is a high-level consultancy, no middlemen: the senior specialist works directly with your team.',
                     founder_link: 'See Israel Hofman\'s full resume',
                     contact_label: 'Contact',
                     contact_title: 'Let\'s talk about your project?',
@@ -395,7 +397,7 @@
                     clients_extra: 'También trabajamos en proyectos de <strong>billetera digital (tipo Uber)</strong> y <strong>plataforma antifraude con IA</strong>, aportando know-how de escala global al contexto local.',
                     clients_footer: '* Proyectos liderados por Israel Hofman a lo largo de 25 años de carrera.',
                     founder_label: 'Quién lidera',
-                    founder_bio: 'DevOps Architect con más de 25 años en TI. Lideró transformaciones para Dell, proyectos de billetera digital (Uber-like) y antifraude con IA, además de industrias como Gerdau, AGCO y Sicredi. Reside en Campo Bom y conoce la realidad de las PYMES de Vale do Sinos. Serendip DevOps es una consultoría de alto nivel, sin intermediarios: el especialista senior trabaja directamente con su equipo.',
+                    founder_bio: 'DevOps Architect con más de 25 años en TI. Lideró transformaciones para Dell, proyectos de billetera digital (Uber-like) y antifraude con IA, además de industrias como Gerdau, AGCO y Sicredi. Reside en Campo Bom y conoce la realidad de las pequeñas y medianas empresas de Vale do Sinos. Serendip DevOps es una consultoría de alto nivel, sin intermediarios: el especialista senior trabaja directamente con su equipo.',
                     founder_link: 'Ver currículum completo de Israel Hofman',
                     contact_label: 'Contacto',
                     contact_title: '¿Hablamos de su proyecto?',
@@ -425,7 +427,7 @@
                     clients_extra: '我们还参与过<strong>数字钱包（类似Uber）</strong>和<strong>AI反欺诈平台</strong>项目，将全球规模的专有技术带入本地。',
                     clients_footer: '* 项目由Israel Hofman在其25年职业生涯中领导。',
                     founder_label: '负责人',
-                    founder_bio: 'DevOps架构师，拥有超过25年IT经验。曾领导Dell、数字钱包（类似Uber）和AI反欺诈项目，以及Gerdau、AGCO、Sicredi等行业。现居Campo Bom，深谙Vale do Sinos地区中小企业现状。Serendip DevOps是一家高级咨询公司，无中间商：资深专家直接与您的团队合作。',
+                    founder_bio: 'DevOps架构师，拥有超过25年IT经验。曾领导Dell、数字钱包（类似Uber）和AI反欺诈项目，以及Gerdau、AGCO、Sicredi等行业。现居Campo Bom，深谙Vale do Sinos地区中小企业的现状。Serendip DevOps是一家高级咨询公司，无中间商：资深专家直接与您的团队合作。',
                     founder_link: '查看Israel Hofman完整履历',
                     contact_label: '联系方式',
                     contact_title: '谈谈您的项目？',
