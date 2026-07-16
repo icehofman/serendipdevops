@@ -1,1443 +1,517 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" dir="ltr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- CORREÇÃO 6: Meta description atualizada conforme exigência -->
-    <meta name="description" content="Avaliação técnica preliminar de infraestrutura para empresas do Vale do Sinos. Descubra riscos ocultos e oportunidades de economia com um especialista de 25 anos.">
-    <!-- CORREÇÃO 2: Title tag corrigido para o texto exato -->
-    <title>Avaliação Técnica Preliminar para Empresas no Vale do Sinos | Continuidade Operacional | Serendip DevOps</title>
+    <meta name="description" content="Serendip DevOps — Enterprise cloud & DevOps consultancy for companies in Vale do Sinos, southern Brazil. Experience with Gerdau, AGCO, Dell, Sicredi, Banrisul, Marcopolo.">
+    <meta name="author" content="Serendip DevOps">
+    <meta name="robots" content="index, follow">
 
-    <!-- Google Fonts -->
+    <meta property="og:title" content="Serendip DevOps | Enterprise Cloud & DevOps">
+    <meta property="og:description" content="Enterprise-grade DevOps practices for SMEs in southern Brazil. Founded by Israel Hofman.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://icehofman.github.io/serendipdevops/">
+    <meta property="og:image" content="https://icehofman.github.io/serendipdevops/og-image.jpg">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:locale:alternate" content="en_US">
+    <meta property="og:locale:alternate" content="es_ES">
+    <meta property="og:locale:alternate" content="zh_CN">
+
+    <link rel="canonical" href="https://icehofman.github.io/serendipdevops/">
+    <link rel="alternate" hreflang="pt" href="https://icehofman.github.io/serendipdevops/?lang=pt">
+    <link rel="alternate" hreflang="en" href="https://icehofman.github.io/serendipdevops/?lang=en">
+    <link rel="alternate" hreflang="es" href="https://icehofman.github.io/serendipdevops/?lang=es">
+    <link rel="alternate" hreflang="zh" href="https://icehofman.github.io/serendipdevops/?lang=zh">
+    <link rel="alternate" hreflang="x-default" href="https://icehofman.github.io/serendipdevops/">
+
+    <title>Serendip DevOps | Consultoria de Infraestrutura & Cloud</title>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=JetBrains+Mono:wght@400&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
 
-    <!-- Font Awesome 6 -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <!-- Bootstrap 5 CSS (apenas para grid e accordion) -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
 
     <style>
         :root {
-            --bg-primary: #FAFAF8;
-            --bg-secondary: #F0EDE8;
-            --text-primary: #1A1A1A;
-            --text-secondary: #4A4A4A;
-            --accent-copper: #C97E4B;
-            --accent-petroleum: #2B6777;
-            --border-light: rgba(26, 26, 26, 0.08);
-            --border-medium: rgba(26, 26, 26, 0.1);
-            --footer-bg: #1A1A1A;
-            --footer-text: #E8E6E3;
-            --white: #FFFFFF;
-        }
-
-        *,
-        *::before,
-        *::after {
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-            font-size: 16px;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            font-weight: 400;
-            color: var(--text-primary);
-            background-color: var(--bg-primary);
-            line-height: 1.7;
-            margin: 0;
-            padding: 0;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-        }
-
-        /* ========== TIPOGRAFIA ========== */
-        h1,
-        h2,
-        h3,
-        .font-display {
-            font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
-            font-weight: 700;
-            color: var(--text-primary);
-            letter-spacing: -0.02em;
-        }
-
-        h1 {
-            font-size: clamp(2rem, 4vw, 3.75rem);
-            line-height: 1.15;
-            margin-bottom: 1.25rem;
-        }
-
-        h2 {
-            font-size: clamp(1.75rem, 3vw, 2.5rem);
-            line-height: 1.25;
-            margin-bottom: 1rem;
-            letter-spacing: -0.01em;
-        }
-
-        h3 {
-            font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
-            font-weight: 600;
-            font-size: 1.35rem;
-            color: var(--text-primary);
-        }
-
-        .font-mono {
-            font-family: 'JetBrains Mono', 'Courier New', monospace;
-            font-weight: 400;
-        }
-
-        .text-secondary {
-            color: var(--text-secondary);
-        }
-
-        .text-copper {
-            color: var(--accent-copper);
-        }
-
-        .text-petroleum {
-            color: var(--accent-petroleum);
-        }
-
-        /* ========== CORREÇÃO 4: Links de texto devem usar azul petróleo #2B6777 ========== */
-        a:not(.btn-outline-copper):not(.hero-cta):not(.footer-contact-link):not(.social-proof-card):not([role="button"]):not(.footer-social-link) {
-            color: #2B6777;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-        a:not(.btn-outline-copper):not(.hero-cta):not(.footer-contact-link):not(.social-proof-card):not([role="button"]):not(.footer-social-link):hover {
-            color: #1a5a6a;
-        }
-        .hero-cta {
-            color: #2B6777 !important;
-            border-bottom-color: #2B6777 !important;
-        }
-        .hero-cta:hover {
-            color: #1a5a6a !important;
-            border-bottom-color: #1a5a6a !important;
-        }
-
-        /* ========== LINHAS E BORDAS ========== */
-        .section-divider {
-            border: none;
-            height: 1px;
-            background: var(--border-light);
-            margin: 0;
-        }
-
-        /* ========== HEADER FIXO ========== */
-        .site-header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000;
-            background: var(--white);
-            padding: 1rem 0;
-            transition: box-shadow 0.3s ease;
-            border-bottom: 1px solid transparent;
-        }
-
-        .site-header.scrolled {
-            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.06);
-            border-bottom: 1px solid var(--border-light);
-        }
-
-        .header-inner {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 0.75rem;
-        }
-
-        .logo-area {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .logo {
-            font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
-            font-weight: 700;
-            font-size: 1.35rem;
-            color: var(--text-primary);
-            text-decoration: none;
-            line-height: 1.2;
-            letter-spacing: -0.01em;
-        }
-
-        .logo:hover {
-            color: var(--text-primary);
-        }
-
-        .logo-slogan {
-            font-family: 'Inter', sans-serif;
-            font-weight: 400;
-            font-size: 0.8rem;
-            color: var(--text-secondary);
-            line-height: 1.3;
-        }
-
-        .btn-outline-copper {
-            display: inline-block;
-            padding: 0.6rem 1.4rem;
-            font-family: 'Inter', sans-serif;
-            font-weight: 600;
-            font-size: 0.9rem;
-            color: var(--accent-copper);
-            background: transparent;
-            border: 1px solid var(--accent-copper);
-            border-radius: 0;
-            text-decoration: none;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            white-space: nowrap;
-            letter-spacing: 0.01em;
-        }
-
-        .btn-outline-copper:hover,
-        .btn-outline-copper:focus-visible {
-            background: var(--accent-copper);
-            color: var(--white);
-            border-color: var(--accent-copper);
-            outline: none;
-        }
-
-        /* ========== CORREÇÃO 3: Sobrescrever box-shadow azul do Bootstrap em inputs, selects e textareas ========== */
-        input:focus,
-        select:focus,
-        textarea:focus {
-            box-shadow: 0 0 0 0.2rem rgba(201, 126, 75, 0.25) !important;
-            border-color: #C97E4B !important;
-            outline: none !important;
-        }
-        /* Garantir que o input do lead magnet também obedeça */
-        .input-email:focus {
-            box-shadow: 0 0 0 0.2rem rgba(201, 126, 75, 0.25) !important;
-            border-color: #C97E4B !important;
-        }
-        /* Garantir que os inputs do formulário também obedeçam */
-        .form-input:focus {
-            box-shadow: 0 0 0 0.2rem rgba(201, 126, 75, 0.25) !important;
-            border-color: #C97E4B !important;
-        }
-        .form-select-custom:focus {
-            box-shadow: 0 0 0 0.2rem rgba(201, 126, 75, 0.25) !important;
-            border-color: #C97E4B !important;
-        }
-
-        /* ========== FADE-IN ANIMATION ========== */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(16px);
-            transition: opacity 0.7s ease, transform 0.7s ease;
-        }
-
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* ========== SEÇÕES ========== */
-        .section {
-            padding: 5rem 0;
-        }
-
-        .section-alt {
-            background-color: var(--bg-secondary);
-        }
-
-        .section-white {
-            background-color: var(--white);
-        }
-
-        /* ========== HERO ========== */
-        .hero-section {
-            padding-top: 8rem;
-            padding-bottom: 4rem;
-            background-color: var(--bg-primary);
-        }
-
-        .hero-photo {
-            width: 100%;
-            max-width: 420px;
-            aspect-ratio: 3/4;
-            object-fit: cover;
-            filter: grayscale(100%);
-            display: block;
-            margin: 0 auto;
-            border: 1px solid var(--border-light);
-        }
-
-        .hero-badge {
-            display: inline-block;
-            font-family: 'Inter', sans-serif;
-            font-weight: 600;
-            font-size: 0.85rem;
-            color: var(--accent-copper);
-            letter-spacing: 0.02em;
-            margin-bottom: 1rem;
-        }
-
-        .hero-cta {
-            display: inline-block;
-            font-family: 'Inter', sans-serif;
-            font-weight: 600;
-            font-size: 1.05rem;
-            text-decoration: none;
-            border-bottom: 2px solid;
-            padding-bottom: 2px;
-            transition: all 0.3s ease;
-            margin-top: 0.75rem;
-            letter-spacing: 0.01em;
-        }
-
-        /* ========== PROVA SOCIAL ========== */
-        .social-proof-card {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 1.25rem 1rem;
-            font-family: 'Inter', sans-serif;
-            font-weight: 600;
-            font-size: 0.95rem;
-            color: var(--text-primary);
-            border: 1px solid transparent;
-            transition: border-color 0.3s ease;
-            text-align: center;
-            min-height: 60px;
-            background: transparent;
-            text-decoration: none;
-        }
-
-        .social-proof-card:hover {
-            border-color: var(--accent-copper);
-        }
-
-        /* ========== CARDS DE ALERTA ========== */
-        .alert-card {
-            padding: 2rem 1.5rem;
-            border: 1px solid var(--border-light);
-            transition: border-color 0.3s ease;
-            background: var(--white);
-            height: 100%;
-        }
-
-        .alert-card:hover {
-            border-color: var(--accent-copper);
-        }
-
-        .alert-card .icon-circle {
-            font-size: 1.6rem;
-            color: var(--accent-copper);
-            margin-bottom: 1rem;
-            display: block;
-        }
-
-        .alert-card h3 {
-            font-family: 'Inter', sans-serif;
-            font-weight: 600;
-            font-size: 1.05rem;
-            color: var(--text-primary);
-            margin-bottom: 0.5rem;
-        }
-
-        .alert-card p {
-            font-family: 'Inter', sans-serif;
-            font-weight: 400;
-            font-size: 0.95rem;
-            color: var(--text-secondary);
-            margin: 0;
-            line-height: 1.6;
-        }
-
-        /* ========== LISTA DE REVELAÇÃO ========== */
-        .reveal-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .reveal-list li {
-            display: flex;
-            align-items: flex-start;
-            gap: 1rem;
-            padding: 0.85rem 0;
-            font-family: 'Inter', sans-serif;
-            font-weight: 400;
-            font-size: 1rem;
-            color: var(--text-primary);
-            border-bottom: 1px solid var(--border-light);
-        }
-
-        .reveal-list li:last-child {
-            border-bottom: none;
-        }
-
-        .reveal-list .check-icon {
-            color: var(--accent-copper);
-            font-size: 1.1rem;
-            flex-shrink: 0;
-            margin-top: 0.15rem;
-        }
-
-        /* ========== PASSOS NUMERADOS ========== */
-        .step-number {
-            font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
-            font-weight: 700;
-            font-size: 3rem;
-            color: rgba(201, 126, 75, 0.3);
-            line-height: 1;
-            margin-bottom: 0.5rem;
-            display: block;
-        }
-
-        .step-title {
-            font-family: 'Inter', sans-serif;
-            font-weight: 600;
-            font-size: 1.1rem;
-            color: var(--text-primary);
-            margin-bottom: 0.4rem;
-        }
-
-        .step-desc {
-            font-family: 'Inter', sans-serif;
-            font-weight: 400;
-            font-size: 0.95rem;
-            color: var(--text-secondary);
-            line-height: 1.6;
-        }
-
-        /* ========== PARA QUEM / NÃO PARA QUEM ========== */
-        .fit-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .fit-list li {
-            display: flex;
-            align-items: flex-start;
-            gap: 0.75rem;
-            padding: 0.6rem 0;
-            font-family: 'Inter', sans-serif;
-            font-weight: 400;
-            font-size: 0.95rem;
-            color: var(--text-primary);
-        }
-
-        .fit-list .fit-icon {
-            flex-shrink: 0;
-            margin-top: 0.15rem;
-            font-size: 1rem;
-        }
-
-        .fit-icon.check {
-            color: var(--accent-copper);
-        }
-
-        .fit-icon.xmark {
-            color: var(--text-secondary);
-        }
-
-        /* ========== CASE CARD ========== */
-        .case-card {
-            border: 1px solid var(--border-light);
-            padding: 2rem;
-            background: var(--white);
-            position: relative;
-        }
-
-        .case-badge {
-            display: inline-block;
-            font-family: 'Inter', sans-serif;
-            font-weight: 600;
-            font-size: 0.7rem;
-            color: var(--accent-copper);
-            letter-spacing: 0.04em;
-            text-transform: uppercase;
-            margin-bottom: 1rem;
-        }
-
-        .case-text {
-            font-family: 'Inter', sans-serif;
-            font-weight: 400;
-            font-size: 1rem;
-            color: var(--text-primary);
-            line-height: 1.7;
-        }
-
-        .case-footnote {
-            font-family: 'Inter', sans-serif;
-            font-weight: 400;
-            font-size: 0.8rem;
-            color: var(--text-secondary);
-            margin-top: 1rem;
-            font-style: italic;
-        }
-
-        /* ========== LEAD MAGNET ========== */
-        .input-email {
-            width: 100%;
-            max-width: 400px;
-            padding: 0.7rem 1rem;
-            font-family: 'Inter', sans-serif;
-            font-weight: 400;
-            font-size: 0.95rem;
-            color: var(--text-primary);
-            background: var(--white);
-            border: 1px solid var(--border-medium);
-            transition: border-color 0.3s ease;
-            outline: none;
-        }
-
-        /* ========== FAQ - ACCORDION CUSTOM ========== */
-        .accordion-button {
-            font-family: 'Inter', sans-serif;
-            font-weight: 600;
-            font-size: 1rem;
-            color: var(--text-primary) !important;
-            background: transparent !important;
-            border: none !important;
-            box-shadow: none !important;
-            padding: 1.1rem 0;
-            border-bottom: 1px solid var(--border-light) !important;
-            border-radius: 0 !important;
-            transition: color 0.3s ease;
-        }
-
-        .accordion-button:not(.collapsed) {
-            color: var(--text-primary) !important;
-            background: transparent !important;
-            border-bottom: 1px solid var(--border-light) !important;
-        }
-
-        .accordion-button::after {
-            filter: brightness(0) saturate(100%) invert(55%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(95%) contrast(90%);
-            transition: transform 0.3s ease;
-        }
-
-        .accordion-button:not(.collapsed)::after {
-            filter: brightness(0) saturate(100%) invert(55%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(95%) contrast(90%);
-            transform: rotate(180deg);
-        }
-
-        .accordion-button:hover {
-            color: var(--accent-copper) !important;
-        }
-
-        .accordion-item {
-            border: none !important;
-            background: transparent !important;
-        }
-
-        .accordion-body {
-            font-family: 'Inter', sans-serif;
-            font-weight: 400;
-            font-size: 0.95rem;
-            color: var(--text-secondary);
-            padding: 1rem 0 1.5rem 0;
-            line-height: 1.7;
-            border-bottom: 1px solid var(--border-light);
-        }
-
-        /* ========== FORMULÁRIO ========== */
-        .form-input {
-            width: 100%;
-            padding: 0.75rem 1rem;
-            font-family: 'Inter', sans-serif;
-            font-weight: 400;
-            font-size: 0.95rem;
-            color: var(--text-primary);
-            background: var(--white);
-            border: 1px solid var(--border-medium);
-            transition: border-color 0.3s ease;
-            outline: none;
-        }
-
-        .form-select-custom {
-            width: 100%;
-            padding: 0.75rem 1rem;
-            font-family: 'Inter', sans-serif;
-            font-weight: 400;
-            font-size: 0.95rem;
-            color: var(--text-primary);
-            background: var(--white);
-            border: 1px solid var(--border-medium);
-            transition: border-color 0.3s ease;
-            outline: none;
-            appearance: auto;
-        }
-
-        .captcha-feedback {
-            font-family: 'Inter', sans-serif;
-            font-weight: 600;
-            font-size: 0.85rem;
-            margin-top: 0.35rem;
-            min-height: 1.3em;
-            transition: color 0.3s ease;
-        }
-
-        .btn-submit {
-            display: inline-block;
-            padding: 0.75rem 2rem;
-            font-family: 'Inter', sans-serif;
-            font-weight: 600;
-            font-size: 0.95rem;
-            color: var(--accent-copper);
-            background: transparent;
-            border: 1px solid var(--accent-copper);
-            cursor: pointer;
-            transition: all 0.3s ease;
-            letter-spacing: 0.01em;
-        }
-
-        .btn-submit:disabled {
-            opacity: 0.4;
-            cursor: not-allowed;
-            color: var(--text-secondary);
-            border-color: var(--border-medium);
-        }
-
-        .btn-submit:not(:disabled):hover,
-        .btn-submit:not(:disabled):focus-visible {
-            background: var(--accent-copper);
-            color: var(--white);
-            border-color: var(--accent-copper);
-            outline: none;
-        }
-
-        /* ========== RODAPÉ ========== */
-        .site-footer {
-            background: var(--footer-bg);
-            color: var(--footer-text);
-            padding: 3rem 0 2rem;
-        }
-
-        .site-footer .footer-logo {
-            font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
-            font-weight: 700;
-            font-size: 1.25rem;
-            color: var(--footer-text);
-        }
-
-        .site-footer a {
-            color: var(--footer-text);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .site-footer a:hover {
-            color: var(--accent-copper);
-        }
-
-        .footer-badge {
-            display: inline-block;
-            font-family: 'Inter', sans-serif;
-            font-weight: 600;
-            font-size: 0.7rem;
-            color: rgba(255, 255, 255, 0.7);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            padding: 0.35rem 0.75rem;
-            letter-spacing: 0.04em;
-            text-transform: uppercase;
-        }
-
-        .footer-contact-link {
-            cursor: pointer;
-            color: var(--footer-text);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .footer-contact-link:hover {
-            color: var(--accent-copper);
-        }
-
-        /* Classe para links de redes sociais no rodapé, mantendo cor do rodapé */
-        .footer-social-link {
-            color: var(--footer-text);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-        .footer-social-link:hover {
-            color: var(--accent-copper);
-        }
-
-        /* ========== RESPONSIVO ========== */
-        @media (max-width: 991px) {
-            .section {
-                padding: 3.5rem 0;
-            }
-            .hero-section {
-                padding-top: 7rem;
-                padding-bottom: 3rem;
-            }
-            h1 {
-                font-size: clamp(1.6rem, 5vw, 2.4rem);
-            }
-            h2 {
-                font-size: clamp(1.4rem, 4vw, 2rem);
-            }
-            .hero-photo {
-                max-width: 300px;
-                margin-bottom: 2rem;
-            }
-            .header-inner {
-                flex-direction: row;
-                align-items: center;
-            }
-            .btn-outline-copper {
-                font-size: 0.8rem;
-                padding: 0.5rem 1rem;
-            }
-            .logo {
-                font-size: 1.15rem;
-            }
-            .logo-slogan {
-                font-size: 0.7rem;
-            }
-        }
-
-        @media (max-width: 767px) {
-            .section {
-                padding: 2.8rem 0;
-            }
-            .hero-section {
-                padding-top: 6.5rem;
-                padding-bottom: 2rem;
-            }
-            h1 {
-                font-size: 1.7rem;
-            }
-            h2 {
-                font-size: 1.5rem;
-            }
-            .hero-photo {
-                max-width: 240px;
-                margin-bottom: 1.5rem;
-            }
-            .step-number {
-                font-size: 2.4rem;
-            }
-            .social-proof-card {
-                font-size: 0.85rem;
-                padding: 0.9rem 0.5rem;
-                min-height: 48px;
-            }
-            .case-card {
-                padding: 1.25rem;
-            }
-            .header-inner {
-                gap: 0.5rem;
-            }
-            .btn-outline-copper {
-                font-size: 0.75rem;
-                padding: 0.45rem 0.85rem;
-            }
+            --color-copper: #C97E4B;
+            --color-copper-light: #D4956A;
+            --color-teal: #2B6777;
+            --color-teal-dark: #1F4E5A;
+            --color-deep-blue: #1A2B3C;
+            --color-deep-blue-light: #243447;
+            --color-bg-light: #FAFAF8;
+            --color-bg-white: #FFFFFF;
+            --color-text-dark: #1A1A1A;
+            --color-text-body: #2C2C2C;
+            --color-text-light: #E8E6E3;
+            --color-text-muted: #6B6B6B;
+            --color-border-subtle: rgba(0, 0, 0, 0.08);
+            --font-heading: 'Playfair Display', Georgia, serif;
+            --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            --max-width: 1100px;
+            --header-height: 72px;
+            --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; scroll-padding-top: var(--header-height); font-size: 16px; }
+        body { font-family: var(--font-body); color: var(--color-text-body); background: var(--color-bg-light); line-height: 1.7; }
+
+        .skip-link { position: absolute; top: -100px; left: 16px; background: var(--color-copper); color: #fff; padding: 8px 16px; border-radius: 0 0 6px 6px; z-index: 10000; font-weight: 600; text-decoration: none; transition: top 0.3s; }
+        .skip-link:focus { top: 0; }
+
+        .site-header { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; height: var(--header-height); background: rgba(255,255,255,0.9); backdrop-filter: blur(12px); border-bottom: 1px solid var(--color-border-subtle); display: flex; align-items: center; }
+        .header-inner { width: 100%; max-width: var(--max-width); margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+        .logo { font-family: var(--font-heading); font-weight: 900; font-size: 1.4rem; color: var(--color-deep-blue); text-decoration: none; letter-spacing: -0.5px; }
+        .logo span { color: var(--color-copper); }
+
+        .nav-links { display: flex; gap: 28px; list-style: none; }
+        .nav-links a { text-decoration: none; color: var(--color-text-body); font-weight: 500; font-size: 0.9rem; transition: color var(--transition-fast); }
+        .nav-links a:hover { color: var(--color-copper); }
+
+        .header-actions { display: flex; align-items: center; gap: 12px; }
+        .lang-selector { position: relative; display: flex; align-items: center; }
+        .lang-current { display: flex; align-items: center; gap: 6px; background: none; border: 1px solid var(--color-border-subtle); padding: 6px 10px; border-radius: 6px; cursor: pointer; font-size: 0.85rem; font-weight: 500; color: var(--color-text-body); font-family: var(--font-body); transition: border-color var(--transition-fast), background var(--transition-fast); }
+        .lang-current:hover, .lang-current:focus-visible { border-color: var(--color-copper); background: rgba(201,126,75,0.08); }
+        .lang-current .flag-emoji { font-size: 1.1rem; }
+        .lang-dropdown { position: absolute; top: calc(100% + 8px); right: 0; background: #fff; border: 1px solid var(--color-border-subtle); border-radius: 8px; box-shadow: 0 12px 32px rgba(0,0,0,0.12); list-style: none; padding: 6px 0; min-width: 140px; opacity: 0; visibility: hidden; transform: translateY(-8px); transition: opacity var(--transition-fast), transform var(--transition-fast), visibility var(--transition-fast); z-index: 1001; }
+        .lang-dropdown.open { opacity: 1; visibility: visible; transform: translateY(0); }
+        .lang-dropdown li button { display: flex; align-items: center; gap: 8px; width: 100%; padding: 10px 16px; border: none; background: none; cursor: pointer; font-size: 0.9rem; font-family: var(--font-body); color: var(--color-text-body); transition: background var(--transition-fast); text-align: left; }
+        .lang-dropdown li button:hover { background: rgba(201,126,75,0.08); color: var(--color-copper); }
+        .lang-dropdown li button.active-lang { font-weight: 700; color: var(--color-copper); }
+
+        .mobile-toggle { display: none; background: none; border: none; font-size: 1.4rem; color: var(--color-text-dark); cursor: pointer; }
+
+        .hero { padding: 140px 24px 80px; background: var(--color-deep-blue); color: #fff; text-align: center; position: relative; overflow: hidden; }
+        .hero::before { content: ''; position: absolute; top: -20%; left: -20%; width: 500px; height: 500px; background: radial-gradient(circle, rgba(201,126,75,0.2) 0%, transparent 70%); border-radius: 50%; }
+        .hero-inner { max-width: 800px; margin: 0 auto; position: relative; z-index: 1; }
+        .hero h1 { font-family: var(--font-heading); font-weight: 900; font-size: clamp(2.4rem, 5vw, 3.5rem); line-height: 1.15; margin-bottom: 16px; color: #fff; }
+        .hero h1 span { color: var(--color-copper); }
+        .hero-sub { font-size: 1.1rem; color: var(--color-text-light); opacity: 0.85; margin-bottom: 24px; max-width: 600px; margin-left: auto; margin-right: auto; }
+        .hero-cta { display: inline-block; padding: 14px 32px; background: var(--color-copper); color: #fff; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 1rem; transition: background var(--transition-fast); }
+        .hero-cta:hover { background: var(--color-copper-light); }
+
+        .section { padding: 80px 24px; }
+        .section-inner { max-width: var(--max-width); margin: 0 auto; }
+        .section-label { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--color-copper); margin-bottom: 8px; display: block; font-weight: 600; }
+        .section-title { font-family: var(--font-heading); font-weight: 700; font-size: 2rem; color: var(--color-deep-blue); margin-bottom: 32px; }
+
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; }
+        .service-card { background: #fff; border: 1px solid var(--color-border-subtle); border-radius: 12px; padding: 28px; transition: box-shadow var(--transition-fast); }
+        .service-card:hover { box-shadow: 0 8px 24px rgba(0,0,0,0.06); }
+        .service-card i { font-size: 1.8rem; color: var(--color-copper); margin-bottom: 12px; display: block; }
+        .service-card h3 { font-weight: 700; margin-bottom: 8px; color: var(--color-deep-blue); }
+
+        .clients-section { background: var(--color-bg-white); }
+        .clients-grid { display: flex; flex-wrap: wrap; gap: 20px 32px; justify-content: center; align-items: center; margin-top: 24px; }
+        .client-name { font-family: var(--font-heading); font-size: 1.3rem; font-weight: 700; color: var(--color-text-muted); opacity: 0.8; letter-spacing: 0.5px; }
+        .client-name.highlight { color: var(--color-teal); opacity: 1; }
+
+        .founder-section { background: var(--color-deep-blue); color: #fff; }
+        .founder-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+        .founder-text h2 { font-family: var(--font-heading); font-size: 2rem; margin-bottom: 16px; }
+        .founder-text p { margin-bottom: 16px; opacity: 0.9; }
+        .founder-link { display: inline-flex; align-items: center; gap: 6px; color: var(--color-copper); font-weight: 600; text-decoration: none; transition: color var(--transition-fast); }
+        .founder-link:hover { color: var(--color-copper-light); }
+        .founder-avatar { width: 200px; height: 200px; border-radius: 50%; background: linear-gradient(135deg, rgba(201,126,75,0.4), rgba(43,103,119,0.4)); display: flex; align-items: center; justify-content: center; margin: 0 auto; }
+        .founder-avatar span { font-family: var(--font-heading); font-size: 3rem; color: rgba(255,255,255,0.6); }
+
+        .contact-section { background: var(--color-bg-white); text-align: center; }
+        .contact-email { font-size: 1.1rem; color: var(--color-teal); font-weight: 500; }
+
+        .site-footer { background: var(--color-deep-blue-light); color: var(--color-text-muted-light); text-align: center; padding: 32px 24px; font-size: 0.85rem; }
+        .site-footer a { color: var(--color-copper); text-decoration: none; font-weight: 500; }
+        .site-footer a:hover { text-decoration: underline; }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .nav-links.mobile-open { display: flex; flex-direction: column; position: absolute; top: var(--header-height); left: 0; right: 0; background: rgba(255,255,255,0.98); backdrop-filter: blur(12px); padding: 20px 24px; gap: 16px; border-bottom: 1px solid var(--color-border-subtle); box-shadow: 0 8px 24px rgba(0,0,0,0.08); z-index: 999; }
+            .mobile-toggle { display: block; }
+            .founder-grid { grid-template-columns: 1fr; text-align: center; }
+            .founder-avatar { margin-bottom: 20px; }
+            .hero { padding: 100px 20px 60px; }
         }
     </style>
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
 
-    <!-- ==================== HEADER FIXO ==================== -->
-    <header class="site-header" id="siteHeader">
-        <div class="container header-inner">
-            <div class="logo-area">
-                <a href="#" class="logo">Serendip DevOps</a>
-                <span class="logo-slogan">O conhecimento das grandes empresas, no ritmo da sua.</span>
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="#" class="logo">Serendip<span>.</span>DevOps</a>
+            <nav>
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="#servicos" data-i18n-nav="services">Serviços</a></li>
+                    <li><a href="#clientes" data-i18n-nav="clients">Clientes</a></li>
+                    <li><a href="#fundador" data-i18n-nav="founder">Fundador</a></li>
+                    <li><a href="#contato" data-i18n-nav="contact">Contato</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <div class="lang-selector">
+                    <button class="lang-current" id="lang-current" aria-haspopup="true" aria-expanded="false">
+                        <span class="flag-emoji" id="current-flag">🇧🇷</span> <span class="lang-code" id="current-lang-code">PT</span> <i class="fa-solid fa-chevron-down" style="font-size:0.65rem;"></i>
+                    </button>
+                    <ul class="lang-dropdown" id="lang-dropdown" role="menu">
+                        <li><button role="menuitem" data-lang="pt" class="active-lang">🇧🇷 Português</button></li>
+                        <li><button role="menuitem" data-lang="en">🇺🇸 English</button></li>
+                        <li><button role="menuitem" data-lang="es">🇪🇸 Español</button></li>
+                        <li><button role="menuitem" data-lang="zh">🇨🇳 中文</button></li>
+                    </ul>
+                </div>
+                <button class="mobile-toggle" id="mobile-toggle" aria-label="Menu">☰</button>
             </div>
-            <a href="#cta-final" class="btn-outline-copper">Agende uma avaliação</a>
         </div>
     </header>
 
-    <main>
-
-        <!-- ==================== HERO SECTION ==================== -->
-        <section class="hero-section" id="hero">
-            <div class="container">
-                <div class="row align-items-center">
-                    <!-- Foto (em mobile, aparece acima) -->
-                    <div class="col-lg-5 order-lg-2 text-center mb-4 mb-lg-0">
-                        <img
-                        src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=600&h=750&fit=crop&crop=face"
-                        alt="Israel Hofman"
-                        class="hero-photo fade-in"
-                        loading="eager"
-                        width="420"
-                        height="560"
-                        >
-                    </div>
-                    <!-- Texto -->
-                    <div class="col-lg-7 order-lg-1">
-                        <span class="hero-badge fade-in">Especialista em software — da ideia à escala, sem complicação.</span>
-                        <h1 class="fade-in">Sua infraestrutura está preparada para crescer — ou está te segurando?</h1>
-                        <p class="text-secondary fade-in" style="font-size:1.1rem;line-height:1.7;">
-                            Sou Israel Hofman. Há mais de 25 anos, construo, arquiteto e opero sistemas de software.
-                            Passei por Dell, AGCO e Banrisul. Hoje, ajudo empresas a identificar o que está drenando
-                            tempo e dinheiro da operação — em uma avaliação técnica de 45 minutos.
-                        </p>
-                        <!-- CORREÇÃO 4: Link âncora agora usa azul petróleo via classe hero-cta -->
-                        <a href="#cta-final" class="hero-cta fade-in">Solicitar uma Avaliação Técnica Preliminar →</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <hr class="section-divider">
-
-        <!-- ==================== BARRA DE PROVA SOCIAL ==================== -->
-        <section class="section section-alt" id="social-proof">
-            <div class="container">
-                <p class="text-center text-secondary fade-in" style="font-size:0.9rem;margin-bottom:1.75rem;">
-                    Empresas onde já atuei.
+    <main id="main-content">
+        <section class="hero">
+            <div class="hero-inner">
+                <h1 data-i18n="hero_title">Infraestrutura cloud <span>de nível enterprise</span> para a sua empresa.</h1>
+                <p class="hero-sub" data-i18n="hero_sub">
+                    Com experiência em <strong>Gerdau, AGCO, Banrisul, Dell, Sicredi</strong>, setor calçadista e <strong>Marcopolo</strong>, 
+                    a Serendip DevOps traz práticas de grandes operações para a realidade do Vale do Sinos e região.
                 </p>
-                <div class="row g-2 justify-content-center">
-                    <div class="col-6 col-md-4 col-lg-2 fade-in"><div class="social-proof-card">Dell Technologies</div></div>
-                    <div class="col-6 col-md-4 col-lg-2 fade-in"><div class="social-proof-card">AGCO</div></div>
-                    <div class="col-6 col-md-4 col-lg-2 fade-in"><div class="social-proof-card">Banrisul</div></div>
-                    <div class="col-6 col-md-4 col-lg-2 fade-in"><div class="social-proof-card">Stefanini</div></div>
-                    <div class="col-6 col-md-4 col-lg-2 fade-in"><div class="social-proof-card">idwall</div></div>
-                    <div class="col-6 col-md-4 col-lg-2 fade-in"><div class="social-proof-card">Yassir</div></div>
-                </div>
+                <a href="#contato" class="hero-cta" data-i18n="hero_cta">Solicitar avaliação →</a>
             </div>
         </section>
 
-        <hr class="section-divider">
-
-        <!-- ==================== SINAIS DE ALERTA ==================== -->
-        <section class="section section-white" id="sinais-alerta">
-            <div class="container">
-                <h2 class="fade-in">Sua operação apresenta algum desses sinais?</h2>
-                <div class="row g-4 mt-3">
-                    <div class="col-md-6 fade-in">
-                        <div class="alert-card">
-                            <i class="fa-regular fa-circle-xmark icon-circle"></i>
-                            <h3>Lentidão ou quedas inexplicadas em produção</h3>
-                            <p>Seus clientes notam antes de você. Cada minuto fora do ar custa receita e credibilidade.</p>
-                        </div>
+        <section class="section" id="servicos">
+            <div class="section-inner">
+                <span class="section-label" data-i18n="services_label">O que fazemos</span>
+                <h2 class="section-title" data-i18n="services_title">Serviços consultivos de infraestrutura</h2>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <i class="fa-solid fa-magnifying-glass-chart"></i>
+                        <h3 data-i18n="service1_title">Avaliação de Maturidade DevOps</h3>
+                        <p data-i18n="service1_desc">Diagnóstico completo de pipelines, cultura e automação com plano de ação priorizado.</p>
                     </div>
-                    <div class="col-md-6 fade-in">
-                        <div class="alert-card">
-                            <i class="fa-regular fa-circle-xmark icon-circle"></i>
-                            <h3>Custos de infraestrutura que sobem todo mês</h3>
-                            <p>Sem clareza sobre o que está consumindo recursos, a conta de cloud vira uma caixa-preta.</p>
-                        </div>
+                    <div class="service-card">
+                        <i class="fa-solid fa-cloud-arrow-up"></i>
+                        <h3 data-i18n="service2_title">Migração para Cloud</h3>
+                        <p data-i18n="service2_desc">De on-premise para GCP/AWS/Azure com segurança, governança e FinOps integrado.</p>
                     </div>
-                    <div class="col-md-6 fade-in">
-                        <div class="alert-card">
-                            <i class="fa-regular fa-circle-xmark icon-circle"></i>
-                            <h3>Deploys que levam horas — e ninguém confia neles</h3>
-                            <p>Processos manuais, rollbacks frequentes e medo de subir código em sexta-feira.</p>
-                        </div>
+                    <div class="service-card">
+                        <i class="fa-solid fa-code-branch"></i>
+                        <h3 data-i18n="service3_title">CI/CD Pipeline Design</h3>
+                        <p data-i18n="service3_desc">Esteiras de deploy escaláveis com GitLab CI, GitHub Actions ou Azure DevOps.</p>
                     </div>
-                    <div class="col-md-6 fade-in">
-                        <div class="alert-card">
-                            <i class="fa-regular fa-circle-xmark icon-circle"></i>
-                            <h3>Você não sabe o que acontece se o servidor principal cair</h3>
-                            <p>Falta de visibilidade, backups não testados e ausência de plano de recuperação.</p>
-                        </div>
+                    <div class="service-card">
+                        <i class="fa-solid fa-coins"></i>
+                        <h3 data-i18n="service4_title">FinOps & Otimização</h3>
+                        <p data-i18n="service4_desc">Redução de custos sem comprometer crescimento — eliminamos recursos ociosos, mantendo elasticidade.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <hr class="section-divider">
-
-        <!-- ==================== O QUE UMA AVALIAÇÃO TÉCNICA REVELA ==================== -->
-        <section class="section section-alt" id="revela">
-            <div class="container">
-                <h2 class="fade-in">Em 45 minutos, posso mapear:</h2>
-                <ul class="reveal-list mt-3 fade-in">
-                    <li><i class="fa-solid fa-check check-icon"></i> Gargalos de performance que drenam a experiência do usuário</li>
-                    <li><i class="fa-solid fa-check check-icon"></i> Desperdícios em cloud e infraestrutura que você nem sabia que existiam</li>
-                    <li><i class="fa-solid fa-check check-icon"></i> Riscos de segurança que passam despercebidos na operação diária</li>
-                    <li><i class="fa-solid fa-check check-icon"></i> Oportunidades de automação que liberam horas da sua equipe</li>
-                    <li><i class="fa-solid fa-check check-icon"></i> Um roadmap técnico com prioridades claras e estimativa de impacto</li>
-                </ul>
-                <p class="text-secondary fade-in mt-4" style="font-size:0.95rem;">
-                    Você recebe um documento de 2 páginas com recomendações priorizadas e estimativa de economia potencial.
+        <section class="section clients-section" id="clientes">
+            <div class="section-inner">
+                <span class="section-label" data-i18n="clients_label">Experiência comprovada</span>
+                <h2 class="section-title" data-i18n="clients_title">Empresas onde atuamos</h2>
+                <p style="max-width:600px;margin-bottom:24px;" data-i18n="clients_desc">Nossa bagagem vem de grandes operações no Sul do Brasil. Confiamos em resultados, não em slides.</p>
+                <div class="clients-grid">
+                    <span class="client-name highlight">Dell</span>
+                    <span class="client-name highlight">Gerdau</span>
+                    <span class="client-name highlight">AGCO</span>
+                    <span class="client-name highlight">Sicredi</span>
+                    <span class="client-name highlight">Banrisul</span>
+                    <span class="client-name highlight">Marcopolo</span>
+                    <span class="client-name" data-i18n="client_shoes">Setor calçadista</span>
+                </div>
+                <p style="font-size:0.9rem;color:var(--color-text-muted);margin-top:16px;" data-i18n="clients_extra">
+                    Também atuamos em projetos de <strong>carteira digital (tipo Uber/99)</strong> e <strong>plataforma de antifraude com IA</strong>, 
+                    trazendo know-how de escala global para o contexto local.
+                </p>
+                <p style="font-size:0.85rem;color:var(--color-text-muted);margin-top:8px;" data-i18n="clients_footer">
+                    * Projetos conduzidos por Israel Hofman ao longo de 25 anos de carreira.
                 </p>
             </div>
         </section>
 
-        <hr class="section-divider">
-
-        <!-- ==================== COMO FUNCIONA ==================== -->
-        <section class="section section-white" id="como-funciona">
-            <div class="container">
-                <h2 class="fade-in">Da avaliação ao plano de ação</h2>
-                <div class="row g-4 mt-3">
-                    <div class="col-md-4 fade-in">
-                        <span class="step-number">1</span>
-                        <p class="step-title">Avaliação Técnica Preliminar</p>
-                        <p class="step-desc">
-                            Conversa técnica de 45 minutos sobre sua operação atual, dores e objetivos.
-                            <br><strong style="color:#1A1A1A;">Investimento: R$&nbsp;350</strong>, integralmente abatidos no primeiro mês de serviço, caso avancemos.
-                        </p>
+        <section class="section founder-section" id="fundador">
+            <div class="section-inner">
+                <div class="founder-grid">
+                    <div class="founder-avatar">
+                        <span>IH</span>
                     </div>
-                    <div class="col-md-4 fade-in">
-                        <span class="step-number">2</span>
-                        <p class="step-title">Diagnóstico aprofundado</p>
-                        <p class="step-desc">
-                            Se decidirmos avançar, mergulho na sua arquitetura para mapear cada ponto crítico com profundidade.
-                        </p>
-                    </div>
-                    <div class="col-md-4 fade-in">
-                        <span class="step-number">3</span>
-                        <p class="step-title">Plano de ação e acompanhamento</p>
-                        <p class="step-desc">
-                            Implementação das melhorias com acompanhamento próximo — sem squad genérico, sem surpresas.
-                        </p>
+                    <div class="founder-text">
+                        <span class="section-label" style="color:var(--color-copper);" data-i18n="founder_label">Quem conduz</span>
+                        <h2>Israel Hofman</h2>
+                        <p data-i18n="founder_bio">DevOps Architect com mais de 25 anos em TI. Liderou transformações para Dell, projetos de carteira digital (Uber-like) e antifraude com IA, além de indústrias como Gerdau, AGCO e Sicredi. Vive em Campo Bom e conhece a realidade das PMEs do Vale do Sinos. A Serendip DevOps é uma consultoria de alto nível, sem intermediários: o especialista sênior trabalha diretamente com seu time.</p>
+                        <a href="https://icehofman.github.io/" class="founder-link">
+                            <span data-i18n="founder_link">Ver currículo completo de Israel Hofman</span> <i class="fa-solid fa-arrow-right"></i>
+                        </a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <hr class="section-divider">
-
-        <!-- ==================== PARA QUEM É (E PARA QUEM NÃO É) ==================== -->
-        <section class="section section-alt" id="para-quem">
-            <div class="container">
-                <h2 class="fade-in">Esta avaliação é para você se…</h2>
-                <div class="row g-4 mt-3">
-                    <div class="col-md-6 fade-in">
-                        <ul class="fit-list">
-                            <li><i class="fa-regular fa-circle-check fit-icon check"></i> Sua empresa tem sistemas em produção e você sente que algo não vai bem</li>
-                            <li><i class="fa-regular fa-circle-check fit-icon check"></i> Você quer reduzir custos de infraestrutura sem comprometer a estabilidade</li>
-                            <li><i class="fa-regular fa-circle-check fit-icon check"></i> Você precisa de escalabilidade mas não sabe por onde começar</li>
-                            <li><i class="fa-regular fa-circle-check fit-icon check"></i> Você valoriza um relacionamento direto com quem executa o serviço</li>
-                        </ul>
-                    </div>
-                    <div class="col-md-6 fade-in">
-                        <ul class="fit-list">
-                            <li><i class="fa-regular fa-circle-xmark fit-icon xmark"></i> Você busca uma solução milagrosa em 24 horas</li>
-                            <li><i class="fa-regular fa-circle-xmark fit-icon xmark"></i> Você prefere contratar um squad genérico que troca de pessoas a cada sprint</li>
-                            <li><i class="fa-regular fa-circle-xmark fit-icon xmark"></i> Você quer um orçamento fechado sem diagnóstico prévio</li>
-                            <li><i class="fa-regular fa-circle-xmark fit-icon xmark"></i> Você não está disposto a investir R$&nbsp;350 em uma avaliação especializada</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <hr class="section-divider">
-
-        <!-- ==================== QUEM CONDUZ A AVALIAÇÃO ==================== -->
-        <section class="section section-white" id="quem-conduz">
-            <div class="container">
-                <h2 class="fade-in">Quem conduz a avaliação</h2>
-                <div class="row align-items-start g-4 mt-3">
-                    <div class="col-md-5 fade-in text-center">
-                        <img
-                        src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=500&h=625&fit=crop&crop=face"
-                        alt="Israel Hofman"
-                        class="hero-photo"
-                        loading="lazy"
-                        width="400"
-                        height="500"
-                        style="max-width:100%;"
-                        >
-                    </div>
-                    <div class="col-md-7 fade-in">
-                        <p style="font-family:'Inter',sans-serif;font-weight:400;font-size:1rem;color:#1A1A1A;line-height:1.75;">
-                            Meu nome é Israel Hofman. Há mais de 25 anos, construo, arquiteto e opero sistemas de software.
-                            Comecei como desenvolvedor, evolui para arquiteto de software e, nos últimos anos, mergulhei
-                            em infraestrutura de missão crítica e cultura DevOps. Atuei em Dell, AGCO, Banrisul, Stefanini,
-                            idwall e Yassir. Essa trajetória me deu uma visão rara: entendo a dor de quem desenvolve,
-                            a responsabilidade de quem arquiteta e a urgência de quem mantém sistemas no ar. Hoje, aplico
-                            esse conhecimento para que pequenas e médias empresas tenham a mesma solidez operacional das
-                            grandes — sem precisar de um exército de especialistas internos. Não tenho gerente de conta.
-                            Quem te atende na primeira conversa é quem vai colocar a mão no seu código. Atendo
-                            presencialmente no Vale do Sinos e remotamente para todo o Brasil.
-                        </p>
-                        <div class="mt-3 d-flex flex-wrap gap-2">
-                            <span style="font-family:'Inter',sans-serif;font-weight:600;font-size:0.75rem;color:#C97E4B;border:1px solid #C97E4B;padding:0.35rem 0.75rem;">Campo Bom, RS</span>
-                            <span style="font-family:'Inter',sans-serif;font-weight:600;font-size:0.75rem;color:#C97E4B;border:1px solid #C97E4B;padding:0.35rem 0.75rem;">Remoto para todo Brasil</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <hr class="section-divider">
-
-        <!-- ==================== CASO LOCAL ILUSTRATIVO ==================== -->
-        <section class="section section-alt" id="caso">
-            <div class="container">
-                <h2 class="fade-in">O que isso significa para empresas como a sua</h2>
-                <div class="case-card mt-3 fade-in">
-                    <span class="case-badge">Case ilustrativo — baseado em situações reais do setor</span>
-                    <p class="case-text">
-                        Indústria de calçados em Novo Hamburgo — após fusão de sistemas, a conta de cloud triplicou.
-                        Em 10 dias, identificamos R$&nbsp;4.300/mês de desperdício e reestruturamos a arquitetura para
-                        escalar sem sustos.
-                    </p>
-                    <p class="case-footnote">Os números são reais; o nome é preservado por confidencialidade.</p>
-                </div>
-            </div>
-        </section>
-
-        <hr class="section-divider">
-
-        <!-- ==================== LEAD MAGNET ==================== -->
-        <section class="section section-white" id="lead-magnet">
-            <div class="container text-center">
-                <h2 class="fade-in">Antes da avaliação, entenda os sinais</h2>
-                <p class="text-secondary fade-in" style="font-size:1rem;max-width:560px;margin:0 auto 1.5rem;">
-                    Baixe o guia rápido: "5 sinais de que sua infraestrutura está te custando dinheiro — e você não sabe".
-                </p>
-                <div class="fade-in d-flex flex-wrap justify-content-center gap-2">
-                    <input type="email" class="input-email" placeholder="Seu melhor e-mail" aria-label="E-mail para receber o guia">
-                    <button type="button" class="btn-outline-copper" style="font-size:0.9rem;">Baixar guia (PDF)</button>
-                </div>
-            </div>
-        </section>
-
-        <hr class="section-divider">
-
-        <!-- ==================== URGÊNCIA ==================== -->
-        <section class="section section-alt" id="urgencia">
-            <div class="container text-center">
-                <p class="fade-in" style="font-family:'Inter',sans-serif;font-weight:400;font-size:1rem;color:#1A1A1A;max-width:650px;margin:0 auto;line-height:1.7;">
-                    Minha capacidade é limitada: atendo no máximo 6 empresas simultaneamente.
-                    Atualmente, tenho algumas vagas disponíveis para novas avaliações este mês.
+        <section class="section contact-section" id="contato">
+            <div class="section-inner">
+                <span class="section-label" data-i18n="contact_label">Contato</span>
+                <h2 class="section-title" data-i18n="contact_title">Vamos conversar sobre seu projeto?</h2>
+                <p style="margin-bottom:24px;" data-i18n="contact_desc">Atendimento personalizado para empresas do Vale do Sinos e região metropolitana de Porto Alegre.</p>
+                <p class="contact-email">
+                    <i class="fa-solid fa-envelope" style="color:var(--color-copper);margin-right:8px;"></i>
+                    <span id="contact-email" data-user="icehofman" data-domain="gmail.com" style="cursor:pointer;text-decoration:underline dotted;" title="Clique para revelar o e-mail" data-i18n-placeholder="email_placeholder">Clique para revelar o e-mail</span>
                 </p>
             </div>
         </section>
-
-        <hr class="section-divider">
-
-        <!-- ==================== FAQ (ACORDEÃO) ==================== -->
-        <section class="section section-white" id="faq">
-            <div class="container">
-                <h2 class="fade-in">Perguntas que escuto com frequência</h2>
-                <div class="accordion mt-3 fade-in" id="faqAccordion">
-                    <!-- Q1 -->
-                    <div class="accordion-item">
-                        <h3 class="accordion-header" id="faqHeading1">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse1" aria-expanded="false" aria-controls="faqCollapse1">
-                                Como funciona a avaliação técnica preliminar?
-                            </button>
-                        </h3>
-                        <div id="faqCollapse1" class="accordion-collapse collapse" aria-labelledby="faqHeading1" data-bs-parent="#faqAccordion">
-                            <div class="accordion-body">
-                                É uma conversa técnica de 45 minutos — por videoconferência ou presencialmente no Vale do Sinos. Você me conta sobre sua operação, suas dores e seus objetivos. Eu faço perguntas cirúrgicas para entender a maturidade da sua infraestrutura. Ao final, entrego um documento de 2 páginas com recomendações priorizadas.
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Q2 -->
-                    <div class="accordion-item">
-                        <h3 class="accordion-header" id="faqHeading2">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse2" aria-expanded="false" aria-controls="faqCollapse2">
-                                Preciso preparar alguma coisa antes?
-                            </button>
-                        </h3>
-                        <div id="faqCollapse2" class="accordion-collapse collapse" aria-labelledby="faqHeading2" data-bs-parent="#faqAccordion">
-                            <div class="accordion-body">
-                                Nada formal. Se tiver acesso ao dashboard de cloud ou a um resumo dos custos de infraestrutura, ajuda. Mas podemos conversar mesmo sem isso — as perguntas certas revelam mais do que relatórios prontos.
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Q3 -->
-                    <div class="accordion-item">
-                        <h3 class="accordion-header" id="faqHeading3">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse3" aria-expanded="false" aria-controls="faqCollapse3">
-                                Você vai acessar minha infraestrutura durante a avaliação?
-                            </button>
-                        </h3>
-                        <div id="faqCollapse3" class="accordion-collapse collapse" aria-labelledby="faqHeading3" data-bs-parent="#faqAccordion">
-                            <div class="accordion-body">
-                                Não durante a avaliação preliminar. O diagnóstico inicial é baseado na conversa e em informações que você compartilhar voluntariamente. O acesso técnico só acontece se avançarmos para o diagnóstico aprofundado — e sempre com autorização explícita.
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Q4 -->
-                    <div class="accordion-item">
-                        <h3 class="accordion-header" id="faqHeading4">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse4" aria-expanded="false" aria-controls="faqCollapse4">
-                                O valor de R$&nbsp;350 é reembolsável?
-                            </button>
-                        </h3>
-                        <div id="faqCollapse4" class="accordion-collapse collapse" aria-labelledby="faqHeading4" data-bs-parent="#faqAccordion">
-                            <div class="accordion-body">
-                                O valor cobre o tempo dedicado à avaliação e ao documento de recomendações. Se avançarmos para um serviço continuado, os R$&nbsp;350 são integralmente abatidos no primeiro mês. Se não avançarmos, você fica com o diagnóstico em mãos — o que já tem valor por si só.
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Q5 -->
-                    <div class="accordion-item">
-                        <h3 class="accordion-header" id="faqHeading5">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse5" aria-expanded="false" aria-controls="faqCollapse5">
-                                E se eu não tiver nenhum problema grave?
-                            </button>
-                        </h3>
-                        <div id="faqCollapse5" class="accordion-collapse collapse" aria-labelledby="faqHeading5" data-bs-parent="#faqAccordion">
-                            <div class="accordion-body">
-                                Ótimo. Nesse caso, o documento confirmará que sua operação está saudável e apontará oportunidades de melhoria que talvez você não tenha considerado. Saber que está tudo bem também é um resultado valioso.
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Q6 -->
-                    <div class="accordion-item">
-                        <h3 class="accordion-header" id="faqHeading6">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse6" aria-expanded="false" aria-controls="faqCollapse6">
-                                Depois da avaliação, sou obrigado a contratar algo?
-                            </button>
-                        </h3>
-                        <div id="faqCollapse6" class="accordion-collapse collapse" aria-labelledby="faqHeading6" data-bs-parent="#faqAccordion">
-                            <div class="accordion-body">
-                                Não. A avaliação é um serviço independente. Você paga pelo diagnóstico e pelo documento. Se fizer sentido para ambos, podemos conversar sobre continuidade — mas não há compromisso algum além da avaliação.
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Q7 -->
-                    <div class="accordion-item">
-                        <h3 class="accordion-header" id="faqHeading7">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse7" aria-expanded="false" aria-controls="faqCollapse7">
-                                Vocês terceirizam o serviço para juniores?
-                            </button>
-                        </h3>
-                        <div id="faqCollapse7" class="accordion-collapse collapse" aria-labelledby="faqHeading7" data-bs-parent="#faqAccordion">
-                            <div class="accordion-body">
-                                Não. Eu, Israel Hofman, conduzo pessoalmente cada avaliação e cada projeto. Não há equipe oculta, não há repasse para profissionais juniores. Quem te atende na primeira conversa é quem vai colocar a mão no seu código. Esse é o compromisso da Serendip DevOps.
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Q8 -->
-                    <div class="accordion-item">
-                        <h3 class="accordion-header" id="faqHeading8">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse8" aria-expanded="false" aria-controls="faqCollapse8">
-                                Você atende presencialmente na região de Novo Hamburgo?
-                            </button>
-                        </h3>
-                        <div id="faqCollapse8" class="accordion-collapse collapse" aria-labelledby="faqHeading8" data-bs-parent="#faqAccordion">
-                            <div class="accordion-body">
-                                Sim. Atendo presencialmente em todo o Vale do Sinos — Novo Hamburgo, Campo Bom, São Leopoldo, Sapiranga e arredores. Para empresas fora da região, o atendimento é remoto com a mesma profundidade.
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Q9 -->
-                    <div class="accordion-item">
-                        <h3 class="accordion-header" id="faqHeading9">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse9" aria-expanded="false" aria-controls="faqCollapse9">
-                                Por que não há preços de planos no site?
-                            </button>
-                        </h3>
-                        <div id="faqCollapse9" class="accordion-collapse collapse" aria-labelledby="faqHeading9" data-bs-parent="#faqAccordion">
-                            <div class="accordion-body">
-                                Porque cada operação é única. Não vendo pacotes fechados — o escopo e o investimento dependem do que a avaliação revelar. A única coisa que precifico de antemão é a Avaliação Técnica Preliminar: R$&nbsp;350. O resto é conversa entre profissionais.
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <hr class="section-divider">
-
-        <!-- ==================== CTA FINAL COM FORMULÁRIO ==================== -->
-        <section class="section section-alt" id="cta-final">
-            <div class="container">
-                <h2 class="fade-in">Solicite sua Avaliação Técnica Preliminar</h2>
-                <p class="text-secondary fade-in" style="font-size:1rem;margin-bottom:0.5rem;">
-                    Preencha o formulário ou chame no WhatsApp. Eu entro em contato para agendarmos.
-                </p>
-                <p class="fade-in" style="font-family:'Inter',sans-serif;font-weight:600;font-size:1rem;color:#1A1A1A;margin-bottom:2rem;">
-                    Investimento: R$&nbsp;350 — abatidos integralmente no primeiro mês de serviço, caso avancemos.
-                </p>
-
-                <div class="row justify-content-center fade-in">
-                    <div class="col-lg-8">
-                        <form id="evaluationForm" novalidate>
-                            <div class="row g-3">
-                                <div class="col-md-6">
-                                    <label for="nome" class="form-label" style="font-family:'Inter',sans-serif;font-weight:600;font-size:0.85rem;color:#1A1A1A;">Nome</label>
-                                    <input type="text" class="form-input" id="nome" name="nome" required placeholder="Seu nome completo">
-                                </div>
-                                <div class="col-md-6">
-                                    <label for="empresa" class="form-label" style="font-family:'Inter',sans-serif;font-weight:600;font-size:0.85rem;color:#1A1A1A;">Empresa</label>
-                                    <input type="text" class="form-input" id="empresa" name="empresa" required placeholder="Nome da sua empresa">
-                                </div>
-                                <div class="col-md-6">
-                                    <label for="email" class="form-label" style="font-family:'Inter',sans-serif;font-weight:600;font-size:0.85rem;color:#1A1A1A;">E-mail</label>
-                                    <input type="email" class="form-input" id="email" name="email" required placeholder="seu@email.com">
-                                </div>
-                                <div class="col-md-6">
-                                    <label for="whatsapp" class="form-label" style="font-family:'Inter',sans-serif;font-weight:600;font-size:0.85rem;color:#1A1A1A;">WhatsApp</label>
-                                    <input type="tel" class="form-input" id="whatsapp" name="whatsapp" required placeholder="(XX) XXXXX-XXXX">
-                                </div>
-                                <div class="col-12">
-                                    <label for="preocupacao" class="form-label" style="font-family:'Inter',sans-serif;font-weight:600;font-size:0.85rem;color:#1A1A1A;">Principal preocupação</label>
-                                    <select class="form-select-custom" id="preocupacao" name="preocupacao" required>
-                                        <option value="" disabled selected>Selecione uma opção</option>
-                                        <option value="estabilidade">Estabilidade e disponibilidade</option>
-                                        <option value="custos de cloud">Custos de cloud e infraestrutura</option>
-                                        <option value="deploys">Velocidade e qualidade dos deploys</option>
-                                        <option value="seguranca">Segurança da informação</option>
-                                        <option value="outro">Outro / Não sei identificar</option>
-                                    </select>
-                                </div>
-                                <!-- CAPTCHA MATEMÁTICO -->
-                                <div class="col-12">
-                                    <label class="form-label" style="font-family:'Inter',sans-serif;font-weight:600;font-size:0.85rem;color:#1A1A1A;">
-                                        Verificação: resolva a operação abaixo
-                                    </label>
-                                    <div style="display:flex;align-items:center;gap:0.75rem;flex-wrap:wrap;">
-                                        <span id="problem" class="font-mono" style="font-size:1.2rem;color:#1A1A1A;background:#FFFFFF;padding:0.5rem 1rem;border:1px solid rgba(26,26,26,0.1);display:inline-block;min-width:80px;text-align:center;">?</span>
-                                        <span style="font-size:1.2rem;color:#1A1A1A;">=</span>
-                                        <input type="number" id="answer" class="form-input" style="max-width:100px;text-align:center;" placeholder="?" aria-label="Resposta do captcha">
-                                    </div>
-                                    <p id="captchaFeedback" class="captcha-feedback"></p>
-                                </div>
-                                <div class="col-12 mt-2">
-                                    <button type="submit" id="submit-btn" class="btn-submit" disabled>Solicitar avaliação</button>
-                                </div>
-                            </div>
-                        </form>
-                        <div class="mt-4 text-center fade-in">
-                            <!-- CORREÇÃO 1: data-phone atualizado para o número real -->
-                            <a href="#" id="whatsappLink" class="btn-outline-copper" data-phone="5551998850128" style="display:inline-block;">
-                                <i class="fa-brands fa-whatsapp"></i> Prefere WhatsApp? Chame aqui.
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
     </main>
 
-    <!-- ==================== RODAPÉ ==================== -->
-    <footer class="site-footer" id="footer">
-        <div class="container">
-            <div class="row g-4 align-items-start">
-                <div class="col-md-4">
-                    <p class="footer-logo">Serendip DevOps</p>
-                    <p style="font-size:0.85rem;color:rgba(232,230,227,0.7);margin-bottom:0.5rem;">
-                        O conhecimento das grandes empresas, no ritmo da sua.
-                    </p>
-                </div>
-                <div class="col-md-4">
-                    <p style="font-weight:600;font-size:0.85rem;margin-bottom:0.5rem;">Contato</p>
-                    <p style="font-size:0.85rem;margin-bottom:0.25rem;">
-                        <span class="footer-contact-link" id="footerEmail" data-email-user="contato" data-email-domain="serendipdevops.com.br" title="Clique para revelar o e-mail">
-                            <i class="fa-regular fa-envelope"></i> <span id="footerEmailText">Clique para ver o e-mail</span>
-                        </span>
-                    </p>
-                    <p style="font-size:0.85rem;margin-bottom:0;">
-                        <!-- CORREÇÃO 1: data-phone atualizado para o número real -->
-                        <span class="footer-contact-link" id="footerPhone" data-phone="5551998850128" title="Clique para revelar o telefone">
-                            <i class="fa-solid fa-phone"></i> <span id="footerPhoneText">Clique para ver o telefone</span>
-                        </span>
-                    </p>
-                </div>
-                <div class="col-md-4 text-md-end">
-                    <p style="margin-bottom:0.75rem;">
-                        <!-- CORREÇÃO 5: Links de LinkedIn e GitHub atualizados para perfis reais -->
-                        <a href="https://linkedin.com/in/icehofman" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="LinkedIn" style="margin-right:1rem;">
-                            <i class="fa-brands fa-linkedin fa-lg"></i> LinkedIn
-                        </a>
-                        <a href="https://github.com/icehofman" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="GitHub">
-                            <i class="fa-brands fa-github fa-lg"></i> GitHub
-                        </a>
-                    </p>
-                    <div class="d-flex flex-wrap gap-2 justify-content-md-end mt-2">
-                        <span class="footer-badge">LGPD Compliant</span>
-                        <span class="footer-badge">GreenOps</span>
-                    </div>
-                </div>
-            </div>
-            <hr style="border-color:rgba(255,255,255,0.12);margin:1.5rem 0;">
-            <p style="font-size:0.8rem;color:rgba(232,230,227,0.6);text-align:center;margin:0;">
-                &copy; 2026 Serendip DevOps. Todos os direitos reservados.
-            </p>
-        </div>
+    <footer class="site-footer">
+        <p>© 2026 Serendip DevOps. Built with <a href="https://pages.github.com/" target="_blank" rel="noopener noreferrer">GitHub Pages</a>.</p>
+        <p style="margin-top:6px;">
+            <a href="https://icehofman.github.io/" data-i18n="footer_link">Página pessoal de Israel Hofman →</a>
+        </p>
     </footer>
-
-    <!-- Bootstrap 5 JS Bundle -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js">
-    </script>
-    <!-- jQuery (apenas para o captcha) -->
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js">
-    </script>
 
     <script>
         (function() {
-            // ==================== HEADER SHADOW NO SCROLL ====================
-            const header = document.getElementById('siteHeader');
-            let scrollTicking = false;
-
-            function updateHeaderShadow() {
-                if (window.scrollY > 10) {
-                    header.classList.add('scrolled');
-                } else {
-                    header.classList.remove('scrolled');
+            const translations = {
+                pt: {
+                    services: 'Serviços', clients: 'Clientes', founder: 'Fundador', contact: 'Contato',
+                    hero_title: 'Infraestrutura cloud <span>de nível enterprise</span> para a sua empresa.',
+                    hero_sub: 'Com experiência em <strong>Gerdau, AGCO, Banrisul, Dell, Sicredi</strong>, setor calçadista e <strong>Marcopolo</strong>, a Serendip DevOps traz práticas de grandes operações para a realidade do Vale do Sinos e região.',
+                    hero_cta: 'Solicitar avaliação →',
+                    services_label: 'O que fazemos',
+                    services_title: 'Serviços consultivos de infraestrutura',
+                    service1_title: 'Avaliação de Maturidade DevOps',
+                    service1_desc: 'Diagnóstico completo de pipelines, cultura e automação com plano de ação priorizado.',
+                    service2_title: 'Migração para Cloud',
+                    service2_desc: 'De on-premise para GCP/AWS/Azure com segurança, governança e FinOps integrado.',
+                    service3_title: 'CI/CD Pipeline Design',
+                    service3_desc: 'Esteiras de deploy escaláveis com GitLab CI, GitHub Actions ou Azure DevOps.',
+                    service4_title: 'FinOps & Otimização',
+                    service4_desc: 'Redução de custos sem comprometer crescimento — eliminamos recursos ociosos, mantendo elasticidade.',
+                    clients_label: 'Experiência comprovada',
+                    clients_title: 'Empresas onde atuamos',
+                    clients_desc: 'Nossa bagagem vem de grandes operações no Sul do Brasil. Confiamos em resultados, não em slides.',
+                    client_shoes: 'Setor calçadista',
+                    clients_extra: 'Também atuamos em projetos de <strong>carteira digital (tipo Uber/99)</strong> e <strong>plataforma de antifraude com IA</strong>, trazendo know-how de escala global para o contexto local.',
+                    clients_footer: '* Projetos conduzidos por Israel Hofman ao longo de 25 anos de carreira.',
+                    founder_label: 'Quem conduz',
+                    founder_bio: 'DevOps Architect com mais de 25 anos em TI. Liderou transformações para Dell, projetos de carteira digital (Uber-like) e antifraude com IA, além de indústrias como Gerdau, AGCO e Sicredi. Vive em Campo Bom e conhece a realidade das PMEs do Vale do Sinos. A Serendip DevOps é uma consultoria de alto nível, sem intermediários: o especialista sênior trabalha diretamente com seu time.',
+                    founder_link: 'Ver currículo completo de Israel Hofman',
+                    contact_label: 'Contato',
+                    contact_title: 'Vamos conversar sobre seu projeto?',
+                    contact_desc: 'Atendimento personalizado para empresas do Vale do Sinos e região metropolitana de Porto Alegre.',
+                    email_placeholder: 'Clique para revelar o e-mail',
+                    footer_link: 'Página pessoal de Israel Hofman →',
+                },
+                en: {
+                    services: 'Services', clients: 'Clients', founder: 'Founder', contact: 'Contact',
+                    hero_title: 'Enterprise-grade <span>cloud infrastructure</span> for your business.',
+                    hero_sub: 'With experience at <strong>Gerdau, AGCO, Banrisul, Dell, Sicredi</strong>, the footwear industry and <strong>Marcopolo</strong>, Serendip DevOps brings large-scale operations expertise to companies in Vale do Sinos and beyond.',
+                    hero_cta: 'Request an assessment →',
+                    services_label: 'What we do',
+                    services_title: 'Infrastructure consulting services',
+                    service1_title: 'DevOps Maturity Assessment',
+                    service1_desc: 'Complete diagnostic of pipelines, culture and automation with a prioritized action plan.',
+                    service2_title: 'Cloud Migration',
+                    service2_desc: 'From on-premise to GCP/AWS/Azure with security, governance and integrated FinOps.',
+                    service3_title: 'CI/CD Pipeline Design',
+                    service3_desc: 'Scalable deployment pipelines with GitLab CI, GitHub Actions or Azure DevOps.',
+                    service4_title: 'FinOps & Optimization',
+                    service4_desc: 'Cost reduction without compromising growth — we eliminate idle resources while keeping elasticity.',
+                    clients_label: 'Proven experience',
+                    clients_title: 'Companies we have worked with',
+                    clients_desc: 'Our background comes from major operations in southern Brazil. We trust results, not slides.',
+                    client_shoes: 'Footwear industry',
+                    clients_extra: 'We also worked on <strong>digital wallet (Uber-like)</strong> and <strong>AI anti-fraud platform</strong> projects, bringing global-scale know-how to the local context.',
+                    clients_footer: '* Projects led by Israel Hofman over a 25-year career.',
+                    founder_label: 'Who leads',
+                    founder_bio: 'DevOps Architect with over 25 years in IT. Led transformations for Dell, digital wallet (Uber-like) and AI anti-fraud projects, plus industries like Gerdau, AGCO and Sicredi. Based in Campo Bom, he understands the reality of SMEs in Vale do Sinos. Serendip DevOps is a high-level consultancy, no middlemen: the senior specialist works directly with your team.',
+                    founder_link: 'See Israel Hofman\'s full resume',
+                    contact_label: 'Contact',
+                    contact_title: 'Let\'s talk about your project?',
+                    contact_desc: 'Personalized service for companies in Vale do Sinos and the Porto Alegre metropolitan area.',
+                    email_placeholder: 'Click to reveal email',
+                    footer_link: 'Israel Hofman\'s personal page →',
+                },
+                es: {
+                    services: 'Servicios', clients: 'Clientes', founder: 'Fundador', contact: 'Contacto',
+                    hero_title: 'Infraestructura cloud <span>de nivel empresarial</span> para su empresa.',
+                    hero_sub: 'Con experiencia en <strong>Gerdau, AGCO, Banrisul, Dell, Sicredi</strong>, sector calzado y <strong>Marcopolo</strong>, Serendip DevOps trae prácticas de grandes operaciones a la realidad de Vale do Sinos y región.',
+                    hero_cta: 'Solicitar evaluación →',
+                    services_label: 'Qué hacemos',
+                    services_title: 'Servicios de consultoría de infraestructura',
+                    service1_title: 'Evaluación de Madurez DevOps',
+                    service1_desc: 'Diagnóstico completo de pipelines, cultura y automatización con plan de acción priorizado.',
+                    service2_title: 'Migración a la Nube',
+                    service2_desc: 'De on-premise a GCP/AWS/Azure con seguridad, gobernanza y FinOps integrado.',
+                    service3_title: 'Diseño de CI/CD',
+                    service3_desc: 'Pipelines de despliegue escalables con GitLab CI, GitHub Actions o Azure DevOps.',
+                    service4_title: 'FinOps y Optimización',
+                    service4_desc: 'Reducción de costes sin comprometer el crecimiento — eliminamos recursos inactivos manteniendo elasticidad.',
+                    clients_label: 'Experiencia comprobada',
+                    clients_title: 'Empresas donde trabajamos',
+                    clients_desc: 'Nuestra experiencia proviene de grandes operaciones en el sur de Brasil. Confiamos en resultados, no en diapositivas.',
+                    client_shoes: 'Sector calzado',
+                    clients_extra: 'También trabajamos en proyectos de <strong>billetera digital (tipo Uber)</strong> y <strong>plataforma antifraude con IA</strong>, aportando know-how de escala global al contexto local.',
+                    clients_footer: '* Proyectos liderados por Israel Hofman a lo largo de 25 años de carrera.',
+                    founder_label: 'Quién lidera',
+                    founder_bio: 'DevOps Architect con más de 25 años en TI. Lideró transformaciones para Dell, proyectos de billetera digital (Uber-like) y antifraude con IA, además de industrias como Gerdau, AGCO y Sicredi. Reside en Campo Bom y conoce la realidad de las PYMES de Vale do Sinos. Serendip DevOps es una consultoría de alto nivel, sin intermediarios: el especialista senior trabaja directamente con su equipo.',
+                    founder_link: 'Ver currículum completo de Israel Hofman',
+                    contact_label: 'Contacto',
+                    contact_title: '¿Hablamos de su proyecto?',
+                    contact_desc: 'Atención personalizada para empresas de Vale do Sinos y área metropolitana de Porto Alegre.',
+                    email_placeholder: 'Clic para revelar el correo',
+                    footer_link: 'Página personal de Israel Hofman →',
+                },
+                zh: {
+                    services: '服务', clients: '客户', founder: '创始人', contact: '联系',
+                    hero_title: '为企业级<span>云基础设施</span>而来。',
+                    hero_sub: '凭借在<strong>Gerdau、AGCO、Banrisul、Dell、Sicredi</strong>、制鞋行业和<strong>Marcopolo</strong>的经验，Serendip DevOps将大规模运营实践带到Vale do Sinos及周边地区。',
+                    hero_cta: '申请评估 →',
+                    services_label: '我们的服务',
+                    services_title: '基础设施咨询服务',
+                    service1_title: 'DevOps成熟度评估',
+                    service1_desc: '对流水线、文化和自动化的全面诊断，附带优先级行动计划。',
+                    service2_title: '云迁移',
+                    service2_desc: '从本地到GCP/AWS/Azure，兼具安全性、治理和集成FinOps。',
+                    service3_title: 'CI/CD流水线设计',
+                    service3_desc: '使用GitLab CI、GitHub Actions或Azure DevOps构建可扩展的部署流水线。',
+                    service4_title: 'FinOps与优化',
+                    service4_desc: '在不影响增长的前提下降低成本——消除闲置资源，保持弹性。',
+                    clients_label: '经验证的经验',
+                    clients_title: '我们合作过的企业',
+                    clients_desc: '我们的背景来自巴西南部的大型运营。我们相信结果，而非幻灯片。',
+                    client_shoes: '制鞋行业',
+                    clients_extra: '我们还参与过<strong>数字钱包（类似Uber）</strong>和<strong>AI反欺诈平台</strong>项目，将全球规模的专有技术带入本地。',
+                    clients_footer: '* 项目由Israel Hofman在其25年职业生涯中领导。',
+                    founder_label: '负责人',
+                    founder_bio: 'DevOps架构师，拥有超过25年IT经验。曾领导Dell、数字钱包（类似Uber）和AI反欺诈项目，以及Gerdau、AGCO、Sicredi等行业。现居Campo Bom，深谙Vale do Sinos地区中小企业现状。Serendip DevOps是一家高级咨询公司，无中间商：资深专家直接与您的团队合作。',
+                    founder_link: '查看Israel Hofman完整履历',
+                    contact_label: '联系方式',
+                    contact_title: '谈谈您的项目？',
+                    contact_desc: '为Vale do Sinos和阿雷格里港大都市区的企业提供个性化服务。',
+                    email_placeholder: '点击显示邮箱',
+                    footer_link: 'Israel Hofman个人页面 →',
                 }
-                scrollTicking = false;
-            }
-
-            window.addEventListener('scroll', function() {
-                if (!scrollTicking) {
-                    requestAnimationFrame(updateHeaderShadow);
-                    scrollTicking = true;
-                }
-            }, { passive: true });
-
-            // ==================== FADE-IN NO SCROLL (Intersection Observer) ====================
-            const fadeElements = document.querySelectorAll('.fade-in');
-            const observerOptions = {
-                root: null,
-                rootMargin: '0px 0px -40px 0px',
-                threshold: 0.1
             };
 
-            const fadeObserver = new IntersectionObserver(function(entries) {
-                entries.forEach(function(entry) {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                        fadeObserver.unobserve(entry.target);
+            let currentLang = 'pt';
+            const langCurrent = document.getElementById('lang-current');
+            const langDropdown = document.getElementById('lang-dropdown');
+            const currentFlag = document.getElementById('current-flag');
+            const currentLangCode = document.getElementById('current-lang-code');
+            const mobileToggle = document.getElementById('mobile-toggle');
+            const navLinks = document.getElementById('nav-links');
+            const emailSpan = document.getElementById('contact-email');
+
+            const langMeta = {
+                pt: { flag: '🇧🇷', code: 'PT' },
+                en: { flag: '🇺🇸', code: 'EN' },
+                es: { flag: '🇪🇸', code: 'ES' },
+                zh: { flag: '🇨🇳', code: 'ZH' }
+            };
+
+            function setLang(lang, updateURL = true) {
+                if (!translations[lang]) return;
+                currentLang = lang;
+                try { localStorage.setItem('serendip-lang', lang); } catch(e) {}
+                if (updateURL && window.history && window.history.replaceState) {
+                    const url = new URL(window.location);
+                    url.searchParams.set('lang', lang);
+                    window.history.replaceState({}, '', url.toString());
+                }
+                document.documentElement.lang = lang === 'zh' ? 'zh-CN' : lang;
+
+                document.querySelectorAll('[data-i18n]').forEach(el => {
+                    const key = el.getAttribute('data-i18n');
+                    if (translations[lang][key]) {
+                        if (key === 'hero_title') {
+                            el.innerHTML = translations[lang][key];
+                        } else {
+                            el.textContent = translations[lang][key];
+                        }
                     }
                 });
-            }, observerOptions);
+                document.querySelectorAll('[data-i18n-nav]').forEach(el => {
+                    const key = el.getAttribute('data-i18n-nav');
+                    if (translations[lang][key]) el.textContent = translations[lang][key];
+                });
+                // email placeholder
+                if (emailSpan && !emailSpan.classList.contains('revealed')) {
+                    emailSpan.textContent = translations[lang].email_placeholder;
+                }
+                // update lang selector UI
+                const meta = langMeta[lang];
+                if (currentFlag) currentFlag.textContent = meta.flag;
+                if (currentLangCode) currentLangCode.textContent = meta.code;
+                document.querySelectorAll('#lang-dropdown button').forEach(btn => {
+                    btn.classList.remove('active-lang');
+                    if (btn.getAttribute('data-lang') === lang) btn.classList.add('active-lang');
+                });
+            }
 
-            fadeElements.forEach(function(el) {
-                fadeObserver.observe(el);
+            function toggleDropdown() {
+                const isOpen = langDropdown.classList.contains('open');
+                if (isOpen) { langDropdown.classList.remove('open'); langCurrent.setAttribute('aria-expanded', 'false'); }
+                else { langDropdown.classList.add('open'); langCurrent.setAttribute('aria-expanded', 'true'); }
+            }
+            langCurrent.addEventListener('click', (e) => { e.stopPropagation(); toggleDropdown(); });
+            document.addEventListener('click', (e) => {
+                if (!langCurrent.contains(e.target) && !langDropdown.contains(e.target)) {
+                    langDropdown.classList.remove('open'); langCurrent.setAttribute('aria-expanded', 'false');
+                }
+            });
+            langDropdown.addEventListener('click', (e) => {
+                const btn = e.target.closest('button[data-lang]');
+                if (btn) {
+                    setLang(btn.getAttribute('data-lang'));
+                    langDropdown.classList.remove('open');
+                    langCurrent.setAttribute('aria-expanded', 'false');
+                }
             });
 
-            // ==================== CAPTCHA MATEMÁTICO (jQuery) ====================
-            $(document).ready(function() {
-                var num1 = Math.floor(Math.random() * 9) + 1;
-                var num2 = Math.floor(Math.random() * 9) + 1;
-                var correctAnswer = num1 + num2;
-                $('#problem').text(num1 + ' + ' + num2 + ' = ?');
-
-                $('#answer').on('input', function() {
-                    var userAnswer = parseInt($(this).val(), 10);
-                    var $feedback = $('#captchaFeedback');
-                    var $submitBtn = $('#submit-btn');
-
-                    if (isNaN(userAnswer)) {
-                        $feedback.text('').css('color', '#4A4A4A');
-                        $submitBtn.prop('disabled', true);
-                        return;
-                    }
-
-                    if (userAnswer === correctAnswer) {
-                        $feedback.text('Resposta correta.').css('color', '#C97E4B');
-                        $submitBtn.prop('disabled', false);
-                    } else {
-                        $feedback.text('Resposta incorreta. Tente novamente.').css('color',
-                            '#4A4A4A');
-                        $submitBtn.prop('disabled', true);
+            // Mobile menu
+            if (mobileToggle && navLinks) {
+                mobileToggle.addEventListener('click', () => {
+                    navLinks.classList.toggle('mobile-open');
+                });
+                navLinks.addEventListener('click', (e) => {
+                    if (e.target.tagName === 'A' && navLinks.classList.contains('mobile-open')) {
+                        navLinks.classList.remove('mobile-open');
                     }
                 });
+            }
 
-                // Previne envio do formulário (página estática)
-                $('#evaluationForm').on('submit', function(e) {
-                    e.preventDefault();
-                    if ($('#submit-btn').prop('disabled')) {
-                        return;
-                    }
-                    // Feedback sutil de envio (simulado)
-                    var $submitBtn = $('#submit-btn');
-                    var originalText = $submitBtn.text();
-                    $submitBtn.text('Solicitação enviada — entrarei em contato em breve.')
-                        .css('color', '#C97E4B').prop('disabled', true);
-                    setTimeout(function() {
-                        $submitBtn.text(originalText).css('color', '#C97E4B').prop('disabled',
-                            false);
-                    }, 3000);
+            // Obfuscated email
+            if (emailSpan) {
+                emailSpan.addEventListener('click', function() {
+                    if (this.classList.contains('revealed')) return;
+                    const user = this.getAttribute('data-user');
+                    const domain = this.getAttribute('data-domain');
+                    const email = user + '@' + domain;
+                    const link = document.createElement('a');
+                    link.href = 'mailto:' + email;
+                    link.textContent = email;
+                    link.style.color = '#2B6777';
+                    link.style.textDecoration = 'underline';
+                    this.textContent = '';
+                    this.appendChild(link);
+                    this.classList.add('revealed');
+                    this.style.cursor = 'default';
+                    this.title = email;
                 });
-            });
+            }
 
-            // ==================== OFUSCAÇÃO DE E-MAIL NO RODAPÉ ====================
-            (function() {
-                var emailUser = 'contato';
-                var emailDomain = 'serendipdevops.com.br';
-                var fullEmail = emailUser + '@' + emailDomain;
-                var emailRevealed = false;
-
-                var footerEmailEl = document.getElementById('footerEmail');
-                var footerEmailText = document.getElementById('footerEmailText');
-
-                footerEmailEl.addEventListener('click', function() {
-                    if (!emailRevealed) {
-                        footerEmailText.textContent = fullEmail;
-                        footerEmailEl.setAttribute('href', 'mailto:' + fullEmail);
-                        footerEmailEl.style.cursor = 'pointer';
-                        emailRevealed = true;
-                    }
-                });
-
-                footerEmailEl.addEventListener('keydown', function(e) {
-                    if (e.key === 'Enter' || e.key === ' ') {
-                        e.preventDefault();
-                        footerEmailEl.click();
-                    }
-                });
-                footerEmailEl.setAttribute('tabindex', '0');
-                footerEmailEl.setAttribute('role', 'button');
-                footerEmailEl.setAttribute('aria-label', 'Clique para revelar o e-mail de contato');
-            })();
-
-            // ==================== OFUSCAÇÃO DE TELEFONE NO RODAPÉ ====================
-            (function() {
-                // CORREÇÃO 1: número de telefone real e formatação correta
-                var phoneRaw = '5551998850128';
-                var phoneFormatted = '(51) 99885-0128';
-                var phoneRevealed = false;
-
-                var footerPhoneEl = document.getElementById('footerPhone');
-                var footerPhoneText = document.getElementById('footerPhoneText');
-
-                footerPhoneEl.addEventListener('click', function() {
-                    if (!phoneRevealed) {
-                        footerPhoneText.textContent = phoneFormatted;
-                        footerPhoneEl.setAttribute('href', 'tel:+' + phoneRaw);
-                        footerPhoneEl.style.cursor = 'pointer';
-                        phoneRevealed = true;
-                    }
-                });
-
-                footerPhoneEl.addEventListener('keydown', function(e) {
-                    if (e.key === 'Enter' || e.key === ' ') {
-                        e.preventDefault();
-                        footerPhoneEl.click();
-                    }
-                });
-                footerPhoneEl.setAttribute('tabindex', '0');
-                footerPhoneEl.setAttribute('role', 'button');
-                footerPhoneEl.setAttribute('aria-label', 'Clique para revelar o telefone de contato');
-            })();
-
-            // ==================== WHATSAPP LINK (OFUSCADO) ====================
-            (function() {
-                var whatsappLink = document.getElementById('whatsappLink');
-                // CORREÇÃO 1: data-phone já atualizado no HTML, capturado dinamicamente
-                var phoneNumber = whatsappLink.getAttribute('data-phone');
-
-                whatsappLink.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    var message = encodeURIComponent(
-                        'Olá, Israel. Tenho interesse na Avaliação Técnica Preliminar. ' +
-                        'Minha empresa é [segmento] e minha principal preocupação é ' +
-                        '[estabilidade | custos de cloud | deploys | segurança].'
-                    );
-                    var fullUrl = 'https://wa.me/' + phoneNumber + '?text=' + message;
-                    window.open(fullUrl, '_blank', 'noopener,noreferrer');
-                });
-            })();
-
-            // ==================== INICIALIZA HEADER SHADOW ====================
-            updateHeaderShadow();
-
+            function init() {
+                const params = new URLSearchParams(window.location.search);
+                const queryLang = params.get('lang');
+                const savedLang = (() => { try { return localStorage.getItem('serendip-lang'); } catch(e) { return null; } })();
+                const browserLang = (navigator.language || '').split('-')[0];
+                const initialLang = queryLang && translations[queryLang] ? queryLang :
+                                   savedLang && translations[savedLang] ? savedLang :
+                                   (['pt','en','es','zh'].includes(browserLang) ? browserLang : 'pt');
+                setLang(initialLang, true);
+            }
+            if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+            else init();
         })();
     </script>
 </body>
